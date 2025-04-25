@@ -24,3 +24,5 @@ bien organizado y libre de errores. Por último, prueba el programa con distinto
 incluyendo casos extremos, para garantizar que funcione correctamente en todas las situaciones
 posibles.
 '''
+
+Abrir archivo "entrenamiento_M1S1.py" dentro del repositorio.
