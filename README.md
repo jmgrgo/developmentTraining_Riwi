@@ -1,4 +1,4 @@
-# entrenamiento_M1S1
+# Entrenamiento Semana 1 Desarrollo Riwi
 
 Entregable de la semana 1 de entrenamiento Riwi - Desarrollo.
 
