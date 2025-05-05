@@ -13,6 +13,11 @@ for caracter in ingresoCalificaciones:
 calificaciones = []
 calificaciones = nuevoStr.split(",")
 
+### Ciclo for para eliminar espacios vacios.
+for i in calificaciones:
+    if i == "":
+        calificaciones.remove(i)
+
 ### Ciclo for para convertir los elementos de la la lista en números enteros.
 for i in range(len(calificaciones)):
     calificaciones[i] = int(calificaciones[i])
@@ -27,11 +32,26 @@ print("\n","="*50)
 #### Se pide el valor para contar cuantas calificaciones lo superan.
 valorMayor = int(input("\n¿Cuantas calificaciones en la lista son mayores a este valor?: "))
 
+### Validación de el ingreso previo.
+while 0 < valorMayor > 100:
+    print("El número ingresado no es válido, intente nuevamente.")
+    valorMayor = int(input("\n¿Cuantas calificaciones en la lista son mayores a este valor?: "))
+
 ### Se le pide el valor para contar cuantas calificaciones son iguales.
 especificas = int(input("¿Cuantas calificaciones en la lista son iguales a este valor?: "))
 
+### Validación de el ingreso previo.
+while 0 < especificas > 100:
+    print("El número ingresado no es válido, intente nuevamente.")
+    especificas = int(input("¿Cuantas calificaciones en la lista son iguales a este valor?: "))
+
 ### ¿Cuanto es el mínimo necesario para aprobar?
 minimo = int(input("Ingrese la nota mínima para aprobar: "))
+
+### Validación del ingreso previo.
+while 0 <= minimo >= 100:
+    print("El número ingresado no es válido, intente nuevamente.")
+    minimo = int(input("Ingrese la nota mínima para aprobar: "))
 
 ### Ciclo para recorrer la lista final.
 for i in range(len(calificaciones)):
