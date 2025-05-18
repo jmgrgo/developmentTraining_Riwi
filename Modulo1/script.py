@@ -28,7 +28,7 @@ def searchProduct(productName):
 ### Function to update the price of the product.       
 def updateProduct(productName, productPrice):
     product = listReader(productName)
-    product["availableStock"] = productPrice
+    product["price"] = productPrice
 
 ### Function to delete the product.
 def deleteProduct(productName):
