@@ -1,0 +1,139 @@
+/* General formatting */
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(59, 59, 59);
+    background: #333333;
+    background: linear-gradient(90deg, rgba(51, 51, 51, 1) 0%, rgba(59, 59, 59, 1) 50%, rgba(0, 0, 0, 1) 100%);
+}
+
+
+/* Nav bar */
+
+nav {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    border-bottom: 1px solid;
+    border-color: white;
+    width: 100%;
+    top: 0px;
+    position: fixed;
+}
+
+.sectionLeft{
+    width: 50%;
+    display: flex;
+}
+
+.sectionLeft img{
+    height: 80px;
+    width: 80px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-55%);
+    margin-left: 20px;
+}
+
+.sectionLeft h2{
+    color: white;
+    font-size: 1.5rem;
+    margin-left: 5%;
+    position: relative;
+    position: relative;
+    top: 20%;
+    transform: translateY(-20%);
+}
+
+.sectionRight{
+    width: 50%;
+}
+
+.sectionRight ul{
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    position: relative;
+    top: 30%;
+    transform: translateY(-30%);
+}
+
+.sectionRight a{
+    text-decoration: none;
+    color: white;
+}
+
+/* Main */
+
+main h1{
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 3.0rem;
+    margin-top: 150px;
+}
+
+.career{
+    display: flex;
+    justify-content: space-evenly;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 2px;
+    color: white;
+    margin-top: 100px;
+}
+
+.studies, .work{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    background-color: black;
+    border: 1px solid;
+    border-radius: 15px;
+    border-color: white;
+    padding: 25px;
+}
+
+.studiesList, .workList{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.studies img{
+    width: 60px;
+    height: 60px;
+}
+
+.work img{
+    width: 60px;
+    height: 60px;
+}
+
+/* Footer */
+
+footer{
+    height: 30px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    background-color: black;
+    border-top: 1px solid white;
+    display: flex;
+    justify-content: center;
+    gap: 500px;
+}
+
+footer p{
+    color: white;
+    font-weight: bold;
+    position: relative;
+    bottom: 6px;
+}
