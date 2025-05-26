@@ -8,9 +8,11 @@ Ejemplo:
 
 '''
 
+### Se le pide al usuario ambos números.
 primerNumero = int(input("Ingrese el primer número: "))
 segundoNumero = int(input("Ingrese el segundo número: "))
 
+### Condicional para validar que el segundo número sea múltiplo del primero.
 if segundoNumero % primerNumero == 0:
     print("El primer número es múltiplo del segundo.")
 else:

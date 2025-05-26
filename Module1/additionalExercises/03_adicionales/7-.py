@@ -14,8 +14,10 @@ Ejemplo:
 
 '''
 
-kilometros = int(input("Ingrese una cantidad de kilometros: "))
+### Se le pide al usuario la cantidad de kilómetros.
+kilometros = int(input("Ingrese una cantidad de kilómetros: "))
 
+### Se imprimen los datos calculados según la cantidad de kilómetros.
 print(kilometros,"km =",kilometros*1000,"metros,",kilometros*100000,"centímetros,",kilometros*1000000,"milímetros.")
 
 

@@ -11,12 +11,15 @@ Si cumplen todo, imprime un mensaje gracioso diciendo que **son compatibles** �
 Si no, di por qué **no lo son**.
 '''
 
+### Se le pide al usuario las edades.
 primerEdad = int(input("Ingrese la edad de la primera persona: "))
 segundaEdad = int(input("Ingrese la edad de la segunda persona: "))
 
+### Se le pide al usuario los nombres.
 primerNombre = input(("Ingrese el nombre de la primera persona: "))
 segundoNombre = input(("Ingrese el nombre de la segunda persona: "))
 
+### Condicional para validar edades y nombre.
 if primerEdad < 18 or segundaEdad < 18:
     print("No son compatibles ya que uno de los dos no tiene almenos 18 años.")
 elif primerNombre == segundoNombre:

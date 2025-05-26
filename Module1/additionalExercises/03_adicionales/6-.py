@@ -8,8 +8,10 @@ Pide un número al usuario.
 - Si no es divisible por ninguno, imprime: `"Nada mágico"`
 '''
 
+### Se le pide al usuario el número.
 numero = int(input("Ingrese el primer número: "))
 
+### Condicional para validar las condiciones de FizzBuzz.
 if numero % 3 == 0 and numero % 5  == 0:
     print("FizzBuzz")
 elif numero % 3 == 0:
