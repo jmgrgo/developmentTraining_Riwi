@@ -1,154 +1,151 @@
 /* General formatting */
 
 body {
-    font-family: 'Courier New', Courier, monospace;
     margin: 0px;
     padding: 0px;
-    background-color: rgb(59, 59, 59);
     background: #333333;
-    background: linear-gradient(90deg, rgba(51, 51, 51, 1) 0%, rgba(59, 59, 59, 1) 50%, rgba(0, 0, 0, 1) 100%);
+    background-color: rgb(59, 59, 59);
+    font-family: "Courier New", Courier, monospace;
 }
-
 
 /* Nav bar */
 
 nav {
-    background-color: black;
     display: flex;
     justify-content: space-between;
+    position: fixed;
+    top: 0px;
+    width: 100%;
     height: 80px;
+    background-color: black;
     border-bottom: 1px solid;
     border-color: white;
-    width: 100%;
-    top: 0px;
-    position: fixed;
 }
 
-.sectionLeft{
-    width: 50%;
+.sectionLeft {
     display: flex;
+    width: 50%;
 }
 
-.sectionLeft img{
-    height: 80px;
-    width: 80px;
+.sectionLeft img {
     position: relative;
     top: 50%;
     transform: translateY(-55%);
+    width: 80px;
+    height: 80px;
     margin-left: 20px;
 }
 
-.sectionLeft h2{
-    color: white;
-    font-size: 1.5rem;
-    margin-left: 5%;
-    position: relative;
+.sectionLeft h2 {
     position: relative;
     top: 20%;
     transform: translateY(-20%);
+    margin-left: 5%;
+    font-size: 1.5rem;
+    color: white;
 }
 
-.sectionRight{
+.sectionRight {
     width: 50%;
 }
 
-.sectionRight ul{
+.sectionRight ul {
     display: flex;
     justify-content: space-evenly;
-    list-style: none;
     position: relative;
     top: 30%;
     transform: translateY(-30%);
+    list-style: none;
 }
 
-.sectionRight a{
-    text-decoration: none;
+.sectionRight a {
     color: white;
+    text-decoration: none;
 }
 
 /* Main */
 
-main h1{
+main h1 {
     display: flex;
     justify-content: center;
-    color: white;
-    font-size: 3.0rem;
     margin-top: 150px;
+    font-size: 3rem;
+    color: white;
 }
 
-.stackList{
-    margin-left: auto;
-    margin-right: auto;
-    width: 60%;
+.stackList {
     display: flex;
     justify-content: space-evenly;
-}
-
-.stackList h2{
-    color: white;
-    display: flex;
-    justify-content: center;
-}
-
-.stackList img{
-    height: 60px;
-    width: 60px;
-}
-
-.leftSectionImg{
-    background-color: white;
-    padding: 10px;
-    border-radius: 20px;
-}
-
-.rightSectionImg{
-    background-color: white;
-    padding: 10px;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-}
-
-.lowerSection{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin-left: auto;
+    width: 60%;
     margin-right: auto;
-    margin-top: 60px;
-    width: 30%;
+    margin-left: auto;
 }
 
-.lowerSection p{
+.stackList h2 {
+    display: flex;
+    justify-content: center;
     color: white;
-    font-size: 1.2rem;
 }
 
-.lowerSection img{
+.stackList img {
+    width: 60px;
+    height: 60px;
+}
+
+.leftSectionImg {
+    padding: 10px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.rightSectionImg {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.lowerSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+    margin-top: 60px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.lowerSection p {
+    font-size: 1.2rem;
+    color: white;
+}
+
+.lowerSection img {
     width: 150px;
     height: 150px;
-    margin-left: auto;
-    margin-right: auto;
     margin-top: 50px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 /* Footer */
 
-footer{
-    height: 30px;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    background-color: black;
-    border-top: 1px solid white;
+footer {
     display: flex;
     justify-content: center;
     gap: 500px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    background-color: black;
+    border-top: 1px solid white;
 }
 
-footer p{
-    color: white;
-    font-weight: bold;
+footer p {
     position: relative;
     bottom: 6px;
+    font-weight: bold;
+    color: white;
 }
