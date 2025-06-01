@@ -3,10 +3,12 @@
 Pide edad, país y número de documento. Muestra si cumple condiciones: edad entre 18 y 30 inclusive, país distinto de "Antártida" y documento diferente de 0.
 '''
 
+### Se le piden al usuario los datos de edad, pais, número de documento.
 edad = int(input("Ingrese su edad: "))
 pais = input("Ingrese su país: ")
 numeroDocumento = int(input("Ingrese su número de documento (sin puntos.): "))
 
+### Condicional para validar edad, pais, documento.
 if (edad >= 18 and edad <= 30) and pais != "Antártida" and numeroDocumento != 0:
     print("Puede participar en el concurso.")
 else:
