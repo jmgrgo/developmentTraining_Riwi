@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="..//assets/imgs/Favicon.png" />
     <link rel="stylesheet" href="../styles/styles.css" />
     <title>Positivus</title>
   </head>
@@ -605,7 +606,9 @@
           </div>
         </div>
 
-        <a class="team__button" href="">See all team</a>
+        <div class="team__button--container">
+          <a class="team__button--link" href="">See all team</a>
+        </div>
       </section>
 
       <!-- Testimonials -->
@@ -628,41 +631,116 @@
       </section>
 
       <!-- Contact Us -->
-       <section class="contact">
-                <div class="section__intro">
+      <section class="contact">
+        <div class="section__intro">
           <h3 class="section__title">Contact Us</h3>
           <p class="section__description">
-Connect with Us: Let's Discuss Your<br>Digital Marketing Needs
+            Connect with Us: Let's Discuss Your<br />Digital Marketing Needs
           </p>
         </div>
 
         <div class="contact__block">
           <div class="contact__block--left">
             <div class="contact__block--upper">
-              <input class="contact__block--radio" type="radio">
-              <label class="contact__block--label" for="">Say Hi</label>
-              <input class="contact__block--radio" type="radio">
-              <label class="contact__block--label" for="">Get a Quote</label>
+              <div class="contact__block--option">
+                <input class="contact__block--radio" type="radio" />
+                <label class="contact__block--label" for="">Say Hi</label>
+              </div>
+              <div class="contact__block--option">
+                <input class="contact__block--radio" type="radio" />
+                <label class="contact__block--label" for="">Get a Quote</label>
+              </div>
             </div>
-            
+
             <div class="contact__block--form">
               <form class=".contact__form" action="">
-                <label class="contact__form--label" for="">Name*</label>
-                <input class="contact__form--input" type="text" placeholder="Name">
-  
+                <label class="contact__form--label" for="">Name</label>
+                <input
+                  class="contact__form--input"
+                  type="text"
+                  placeholder="Name"
+                />
+
                 <label class="contact__form--label" for="">Email*</label>
-                <input class="contact__form--input" type="email" placeholder="Email">
-  
+                <input
+                  class="contact__form--input"
+                  type="email"
+                  placeholder="Email"
+                />
+
                 <label class="contact__form--label" for="">Message*</label>
-                <textarea class="contact__form--inputArea" name="" id="" placeholder="Message"></textarea>
-  
-                <input class="contact__form--submit" type="submit">
+                <textarea
+                  class="contact__form--inputArea"
+                  name=""
+                  id=""
+                  placeholder="Message"
+                ></textarea>
+
+                <input class="contact__form--submit" type="submit" />
               </form>
             </div>
           </div>
-            <img class="contact__block--image" src="../assets/imgs/Illustration3.png" alt="">
+          <img
+            class="contact__block--image"
+            src="../assets/imgs/Illustration3.png"
+            alt=""
+          />
         </div>
-       </section>
+      </section>
+
+      <!-- Footer -->
+      <footer>
+        <nav class="footer__nav">
+          <img
+            class="footer__nav--image"
+            src="../assets/imgs/footerLogo.png"
+            alt=""
+          />
+          <ul class="footer__nav--links">
+            <li><a class="footer__nav--anchor" href="">About us</a></li>
+            <li><a class="footer__nav--anchor" href="">Services</a></li>
+            <li><a class="footer__nav--anchor" href="">Use Cases</a></li>
+            <li><a class="footer__nav--anchor" href="">Pricing</a></li>
+            <li><a class="footer__nav--anchor" href="">Blog</a></li>
+          </ul>
+          <ul class="footer__nav--social">
+            <li class="footer__nav--icon">
+              <img src="../assets/imgs/linkedinIcon.png" alt="" />
+            </li>
+            <li class="footer__nav--icon">
+              <img src="../assets/imgs/facebookIcon.png" alt="" />
+            </li>
+            <li class="footer__nav--icon">
+              <img src="../assets/imgs/twitterIcon.png" alt="" />
+            </li>
+          </ul>
+        </nav>
+        <section class="footer__info">
+          <div class="footer__contactUs">
+            <h4 class="footer__contactUs--title">Contact us:</h4>
+            <p class="footer__contactUs--info">Email: info@positivus.com</p>
+            <p class="footer__contactUs--info">Phone: 555-567-8901</p>
+            <p class="footer__contactUs--info">
+              Address: 1234 Main St<br />Moonstone City, Stardust State 12345
+            </p>
+          </div>
+          <div class="footer__info--input">
+            <input
+              class="footer__info--email"
+              type="email"
+              placeholder="Email"
+            />
+            <a class="footer__info--button" href="">Subscribe to news</a>
+          </div>
+        </section>
+        <img class="footer__line" src="../assets/imgs/footerLine.png" alt="" />
+        <div class="footer__copyright">
+          <p class="footer__copyright--text">
+            © 2023 Positivus. All Rights Reserved.
+          </p>
+          <a class="footer__copyright--link" href="">Privacy Policy</a>
+        </div>
+      </footer>
     </main>
   </body>
 </html>
