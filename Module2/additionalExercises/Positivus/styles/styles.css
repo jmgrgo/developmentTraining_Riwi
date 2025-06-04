@@ -78,11 +78,15 @@ header {
   border-radius: 14px;
 }
 
+main {
+  padding: 0px 100px;
+}
+
 .intro {
   display: flex;
   flex-direction: column;
   gap: 70px;
-  padding: 70px 100px;
+  padding: 70px 0px;
 }
 
 .intro__upper {
@@ -138,7 +142,7 @@ header {
 }
 
 .intro__logos img {
-  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
   width: auto;
   height: 48px;
@@ -148,7 +152,6 @@ header {
 
 .services {
   margin-top: 140px;
-  padding: 0px 100px;
 }
 
 /* Services card */
@@ -156,21 +159,21 @@ header {
 .services__cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   gap: 40px;
   margin-top: 80px;
 }
 
 .services__card {
-  filter: drop-shadow(0px 5px #191a23);
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
-  width: 600px;
+  width: auto;
   height: 310px;
   padding: 50px;
   background-color: #f3f3f3;
   border: solid 1px #000000;
+  border-bottom-width: 5px;
   border-radius: 40px;
 }
 
@@ -246,7 +249,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 1240px;
+  box-sizing: border-box;
+  width: 100%;
   height: 347px;
   margin-top: 100px;
   margin-right: auto;
@@ -296,14 +300,14 @@ header {
 
 .caseStudies {
   margin-top: 140px;
-  padding: 0px 100px;
 }
 
 .caseStudies__block {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 1234px;
+  box-sizing: border-box;
+  width: auto;
   height: 326px;
   margin-top: 80px;
   margin-right: auto;
@@ -341,7 +345,6 @@ header {
 
 .workingProgress {
   margin-top: 140px;
-  padding: 0px 100px;
 }
 
 .workingProgress__blocks {
@@ -353,16 +356,16 @@ header {
 }
 
 .workingProgress__highlightBlock {
-  filter: drop-shadow(0px 5px #191a23);
   display: flex;
   flex-direction: column;
   gap: 30px;
   box-sizing: border-box;
-  width: 1234px;
+  width: 100%;
   height: 279px;
   padding: 41px 60px;
   background-color: #b9ff66;
   border: 1px solid;
+  border-bottom-width: 5px;
   border-radius: 45px;
 }
 
@@ -377,6 +380,7 @@ header {
   justify-content: flex-start;
   gap: 17px;
 }
+
 .workingProgress__highlightBlock--number {
   font-size: 60px;
 }
@@ -396,16 +400,16 @@ header {
 }
 
 .workingProgress__standardBlock {
-  filter: drop-shadow(0px 5px #191a23);
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
-  width: 1234px;
+  width: 100%;
   height: 159px;
   padding: 41px 60px;
   background-color: #f3f3f3;
   border: solid 1px;
+  border-bottom-width: 5px;
   border-radius: 45px;
 }
 
@@ -432,14 +436,13 @@ header {
 
 .team {
   margin-top: 140px;
-  padding: 0px 100px;
 }
 
 .team__cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 40px;
+  gap: 55px;
   margin-top: 80px;
 }
 
@@ -452,9 +455,10 @@ header {
   gap: 28px;
   box-sizing: border-box;
   width: 387px;
-  height: 331px;
+  height: 354px;
   padding: 40px 35px;
   border: 1px solid;
+  border-bottom-width: 5px;
   border-radius: 45px;
 }
 
@@ -511,7 +515,6 @@ header {
 
 .testimonials {
   margin-top: 100px;
-  padding: 0px 100px;
 }
 
 .testimonials__block {
@@ -530,13 +533,13 @@ header {
 
 .contact {
   margin-top: 140px;
-  padding: 0px 100px;
 }
 
 .contact__block {
   display: flex;
   justify-content: space-between;
-  width: 1240px;
+  box-sizing: border-box;
+  width: auto;
   height: 773px;
   margin: 80px auto 0px auto;
   padding: 60px 0px 80px 100px;
@@ -545,8 +548,7 @@ header {
 }
 
 .contact__block--image {
-  transform: translateX(320px);
-  width: 691px;
+  width: 345px;
   height: 648px;
 }
 
@@ -575,11 +577,20 @@ header {
   font-size: 18px;
 }
 
+.contact__block--left{
+  width: 633px;
+}
+
 .contact__block--form {
   display: flex;
   flex-direction: column;
   gap: 25px;
   margin-top: 40px;
+}
+
+.contact__form{
+  display: flex;
+  flex-direction: column;
 }
 
 .contact__form--label {
@@ -625,7 +636,7 @@ header {
 
 footer {
   box-sizing: border-box;
-  width: 1241px;
+  width: 100%;
   height: 514px;
   margin: 140px auto 0px auto;
   padding: 55px 60px 50px 60px;
@@ -637,7 +648,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 1121px;
+  width: 100%;
   height: 30px;
 }
 
@@ -716,6 +727,7 @@ footer {
   font-size: 18px;
   color: #ffffff;
 }
+
 .footer__info--email::placeholder {
   color: #ffffff;
 }
@@ -733,6 +745,7 @@ footer {
 
 .footer__line {
   margin: 50px 0px;
+  width: 100%;
 }
 
 .footer__copyright {
@@ -746,4 +759,8 @@ footer {
 
 .footer__copyright--link {
   color: #ffffff;
+}
+
+@media (max-width: 480px){
+
 }
