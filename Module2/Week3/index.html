@@ -4,11 +4,76 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles.css" />
-    <title>Document</title>
+    <title>Cookie Characters</title>
   </head>
   <body>
+    <header>
+      <nav>
+        <ul class="nav__links">
+          <li><a class="nav__links--anchor" href="">Home</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="scrollMenu">
+      <img
+        class="scrollMenu__icon"
+        src="./assets/extras/burger.png"
+        alt="Menu Icon"
+      />
+      <ul class="scrollMenu__links">
+        <li class="scrollMenu__links--title">Quick Scroll Menu</li>
+        <li>
+          <a class="scrollMenu__links--anchor" href="#commonCookies"
+            >Common Cookies</a
+          >
+        </li>
+        <li>
+          <a class="scrollMenu__links--anchor" href="#rareCookies"
+            >Rare Cookies</a
+          >
+        </li>
+        <li>
+          <a class="scrollMenu__links--anchor" href="#specialCookies"
+            >Special Cookies</a
+          >
+        </li>
+        <li>
+          <a class="scrollMenu__links--anchor" href="#epicCookies"
+            >Epic Cookies</a
+          >
+        </li>
+        <li>
+          <a class="scrollMenu__links--anchor" href="#superEpicCookies"
+            >Super Epic Cookies</a
+          >
+        </li>
+        <li>
+          <a class="scrollMenu__links--anchor" href="#dragonCookies"
+            >Dragon Cookies</a
+          >
+        </li>
+        <li>
+          <a class="scrollMenu__links--anchor" href="#legendaryCookies"
+            >Legendary Cookies</a
+          >
+        </li>
+        <li>
+          <a class="scrollMenu__links--anchor" href="#ancientCookies"
+            >Ancient Cookies</a
+          >
+        </li>
+        <li>
+          <a class="scrollMenu__links--anchor" href="#beastCookies"
+            >Beast Cookies</a
+          >
+        </li>
+      </ul>
+    </div>
+
     <main>
-      <section class="commonCookies sectionCookies">
+      <h1 class="main__title">Cookie Characters</h1>
+      <section class="commonCookies sectionCookies" id="commonCookies">
         <div class="common__title sectionHeader">
           <img src="./assets/extras/Soulstone_1.webp" alt="" />
           <h2 class="common__title--header sectionTitle">Common Cookies</h2>
@@ -157,8 +222,10 @@
         </div>
       </section>
 
+<hr>
+
       <!-- Rare Cookies -->
-      <section class="rareCookies sectionCookies">
+      <section class="rareCookies sectionCookies" id="rareCookies">
         <div class="rare__title sectionHeader">
           <img src="./assets/extras/Soulstone_2.webp" alt="" />
           <h2 class="rare__title--header sectionTitle">Rare Cookies</h2>
@@ -440,8 +507,10 @@
         </div>
       </section>
 
+<hr>
+
       <!-- Special Cookies -->
-      <section class="specialCookies sectionCookies">
+      <section class="specialCookies sectionCookies" id="specialCookies">
         <div class="special__title sectionHeader">
           <img src="./assets/extras/Cookie_stone_special.webp" alt="" />
           <h2 class="special__title--header sectionTitle">Special Cookies</h2>
@@ -685,8 +754,10 @@
         </div>
       </section>
 
+<hr>
+
       <!-- Epic Cookies -->
-      <section class="epicCookies sectionCookies">
+      <section class="epicCookies sectionCookies" id="epicCookies">
         <div class="epic__title sectionHeader">
           <img src="./assets/extras/Soulstone_3.webp" alt="" />
           <h2 class="epic__title--header sectionTitle">Epic Cookies</h2>
@@ -2568,10 +2639,32 @@
               </div>
             </div>
           </div>
+          <!-- Cookie Lola -->
+          <div class="character__card">
+            <div class="character__card--title">
+              <h3>Lola Cookie</h3>
+            </div>
+            <div class="character__card--portrait">
+              <img
+                src="./assets/characterPortratis/cookielola.webp"
+                alt="Lola Cookie"
+              />
+            </div>
+            <div class="character__card--role">
+              <div class="character__card--type">
+                <img src="./assets/roles/Ranged.webp" alt="Ranged" />
+              </div>
+              <div class="character__card--position">
+                <img src="./assets/roles/Middle.webp" alt="Middle" />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section class="superEpicCookies sectionCookies">
+      <hr>
+
+      <section class="superEpicCookies sectionCookies" id="superEpicCookies">
         <div class="superEpic__title sectionHeader">
           <img src="./assets/extras/Cookie_stone_super_epic.webp" alt="" />
           <h2 class="superEpic__title--header sectionTitle">
@@ -2780,31 +2873,12 @@
               </div>
             </div>
           </div>
-
-          <!-- Cookie Lola -->
-          <div class="character__card">
-            <div class="character__card--title">
-              <h3>Lola Cookie</h3>
-            </div>
-            <div class="character__card--portrait">
-              <img
-                src="./assets/characterPortratis/cookielola.webp"
-                alt="Lola Cookie"
-              />
-            </div>
-            <div class="character__card--role">
-              <div class="character__card--type">
-                <img src="./assets/roles/Ranged.webp" alt="Ranged" />
-              </div>
-              <div class="character__card--position">
-                <img src="./assets/roles/Middle.webp" alt="Middle" />
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
-      <section class="dragonCookies sectionCookies">
+      <hr>
+
+      <section class="dragonCookies sectionCookies" id="dragonCookies">
         <div class="dragon__title sectionHeader">
           <img src="./assets/extras/Soulstone_dragon.webp" alt="" />
           <h2 class="dragon__title--header sectionTitle">Dragon Cookies</h2>
@@ -2833,7 +2907,9 @@
         </div>
       </section>
 
-      <section class="legendaryCookies sectionCookies">
+      <hr>
+
+      <section class="legendaryCookies sectionCookies" id="legendaryCookies">
         <div class="legendary__title sectionHeader">
           <img src="./assets/extras/Soulstone_legendary.webp" alt="" />
           <h2 class="legendary__title--header sectionTitle">
@@ -2984,9 +3060,11 @@
         </div>
       </section>
 
+<hr>
+
       <!-- Ancient Cookies -->
 
-      <section class="ancientCookies sectionCookies">
+      <section class="ancientCookies sectionCookies" id="ancientCookies">
         <div class="ancient__title sectionHeader">
           <img src="./assets/extras/Soulstone_4.webp" alt="" />
           <h2 class="ancient__title--header sectionTitle">Ancient Cookies</h2>
@@ -3095,7 +3173,9 @@
         </div>
       </section>
 
-      <section class="ancientCookies sectionCookies">
+      <hr>
+
+      <section class="beastCookies sectionCookies" id="beastCookies">
         <div class="beast__title sectionHeader">
           <img src="./assets/extras/Soulstone_beast.webp" alt="" />
           <h2 class="beast__title--header sectionTitle">Beast Cookies</h2>

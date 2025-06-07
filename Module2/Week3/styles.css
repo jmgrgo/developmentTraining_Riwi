@@ -7,10 +7,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-body {
-  background-image: url(./assets/extras/4b65a55f-90d8-4aa6-b9bf-6279f37614db.jpg);
+  font-family: "cookierunBold", sans-serif;
 }
 
 /* General styles for the character card */
@@ -55,7 +52,6 @@ body {
   background-color: #57473a;
   border-bottom: solid 4px #e6d2c7;
   border-radius: 10px 10px 0px 0px;
-  font-family: "cookierunBold", sans-serif;
   color: white;
   text-align: center;
   text-shadow: 1px 1px 2px black;
@@ -76,8 +72,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 35px;
-  height: 35px;
+  width: 45px;
+  height: 45px;
   background-color: #a48973;
   border: solid 2px #ffffff;
   border-radius: 14px;
@@ -87,11 +83,10 @@ body {
 
 .sectionCookies {
   width: 100%;
-  padding: 0px 20%;
+  padding: 10em 20em;
 }
 
 .sectionTitle {
-  font-family: "cookierunBold", sans-serif;
   color: rgb(255, 255, 255);
   text-align: center;
   text-shadow: 1px 1px 2px black;
@@ -103,22 +98,135 @@ body {
   margin-top: 20px;
   padding: 10px 20px;
   border-radius: 15px;
+  width: 100%;
 }
 
 .sectionCards {
   display: grid;
   justify-content: space-between;
+  justify-items: center;
   align-items: center;
   row-gap: 20px;
+  column-gap: 5%;
   grid-template-rows: auto;
-  grid-template-columns: 200px 200px 200px 200px 200px;
+  grid-template-columns: repeat(auto-fit, max(200px));
   width: 100%;
+  height: auto;
   margin-top: 20px;
+}
+
+/* Navbar */
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 20px;
+}
+
+.nav__links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  list-style: none;
+  background-color: #8d591e;
+  text-decoration: no;
+  gap: 30px;
+  border: 5px solid #503a0c;
+  border-radius: 15px;
+  width: 90%;
+}
+
+.nav__links--anchor {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+  transition: 150ms ease;
+}
+
+.nav__links--anchor:hover {
+  color: rgb(253, 207, 108);
+}
+
+/* Scroll Menu */
+
+.scrollMenu {
+  position: fixed;
+  right: 25px;
+  top: 18%;
+}
+
+.scrollMenu__icon {
+  display: none;
+}
+
+.scrollMenu__links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  list-style: none;
+}
+
+.scrollMenu__links--title {
+  color: white;
+  font-size: 25px;
+  text-shadow: 1px 1px 2px black;
+  display: inline-block;
+}
+
+.scrollMenu__links--anchor {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  text-shadow: 1px 1px 2px black;
+  transition: transform 100ms ease, color 100ms ease;
+  display: inline-block;
+}
+
+.scrollMenu__links--anchor:hover {
+  color: rgb(248, 248, 131);
+  transform: scale(1.1);
+}
+
+.scrollMenu__links--anchor:active {
+  color: rgb(255, 0, 0);
+  transform: scale(1.1);
+  transition: 50ms;
+}
+
+/* Main title */
+
+.main__title {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  top: 100px;
+  justify-content: center;
+  font-size: 60px;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+}
+
+/* Section Divisor */
+
+hr{
+  height: 40px;
+  background-color: #1a1a1a;
+  border-color: #1a1a1a;
 }
 
 /* Common Cookies */
 
+.commonCookies {
+  background-image: url(./assets/extras/mountainCave.jpg);
+  background-size: cover;
+  background-position: bottom;
+}
+
 .common__title {
+  margin-top: 100px;
   background: #b07c04;
   border: 5px solid #412f27;
 }
@@ -129,6 +237,11 @@ body {
 }
 
 /* Rare Cookies */
+
+.rareCookies {
+  background-image: url(./assets/extras/blackValley.jpg);
+  background-size: cover;
+}
 
 .rare__title {
   background: #00b7ff;
@@ -150,6 +263,12 @@ body {
   background: #2e92b9;
 }
 /* Special Cookies */
+
+.specialCookies {
+  background-image: url(./assets/extras/alienplanet.jpg);
+  background-size: cover;
+  background-position: bottom;
+}
 
 .special__title {
   background: #ffb300;
@@ -176,6 +295,12 @@ body {
 }
 
 /* Epic Cookies */
+
+.epicCookies {
+  background-image: url(./assets/extras/redForest.jpg);
+  background-size: cover;
+  background-position: bottom;
+}
 
 .epic__title {
   background: #c20017;
@@ -212,6 +337,12 @@ body {
 
 /* Super epic Cookies */
 
+.superEpicCookies {
+  background-image: url(./assets/extras/cosmicDesert.jpg);
+  background-size: cover;
+  background-position: bottom;
+}
+
 .superEpic__title {
   background: #f2c252;
   background: linear-gradient(
@@ -243,6 +374,12 @@ body {
 }
 
 /* Dragon Cookies */
+
+.dragonCookies {
+  background-image: url(./assets/extras/prehistoricLandscape.webp);
+  background-size: cover;
+  background-position: bottom;
+}
 
 .dragon__title {
   background: #1a1a1a;
@@ -276,6 +413,12 @@ body {
 }
 
 /* Legendary Cookies */
+
+.legendaryCookies {
+  background-image: url(./assets/extras/skyCastle.jpg);
+  background-size: cover;
+  background-position: bottom;
+}
 
 .legendary__title {
   background: #952a9b;
@@ -317,6 +460,12 @@ body {
 
 /* Ancient Cookies */
 
+.ancientCookies {
+  background-image: url(./assets/extras/cosmic.jpg);
+  background-size: cover;
+  background-position: bottom;
+}
+
 .ancient__title {
   background: #8a3799;
   background: linear-gradient(
@@ -353,6 +502,12 @@ body {
 
 /* Beast Cookies */
 
+.beastCookies {
+  background-image: url(./assets/extras/volcano.jpg);
+  background-size: cover;
+  background-position: bottom;
+}
+
 .beast__title {
   background: #993737;
   background: linear-gradient(
@@ -385,4 +540,83 @@ body {
     rgba(128, 0, 0, 1) 20%,
     rgba(204, 20, 20, 1) 100%
   );
+}
+
+@media screen and (max-width: 480px) {
+  .sectionCookies {
+    padding: 2em 1em;
+  }
+
+  .sectionTitle {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .sectionCards {
+    justify-content: center;
+    row-gap: 15px;
+  }
+
+  .sectionHeader {
+    display: flex;
+    justify-content: center;
+  }
+
+  .sectionHeader img {
+    display: none;
+  }
+
+  .main__title {
+    font-size: 35px;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .sectionCookies {
+    padding: 3em 2em;
+  }
+
+  .sectionCards {
+    justify-content: center;
+  }
+
+  .main__title {
+    font-size: 35px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .sectionCookies {
+    padding: 5em 5em;
+  }
+
+  .sectionCards {
+    justify-content: center;
+    z-index: 1;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .scrollMenu {
+    z-index: 999;
+  }
+
+  .scrollMenu__icon {
+    position: fixed;
+    display: block;
+    width: 70px;
+    height: auto;
+    top: 20px;
+    right: 20px;
+    background-color: white;
+    padding: 5px;
+    border: 2px solid #515152;
+    border-radius: 15px;
+  }
+
+  .scrollMenu__links {
+    display: none;
+  }
 }
