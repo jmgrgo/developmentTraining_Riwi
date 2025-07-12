@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Product App</title>
+  </head>
+  <body>
+    <main>
+      <!-- App -->
+      <section class="appMenu">
+        <!-- App title bar -->
+        <div class="appMenu__titleBar">
+          <h1 class="titleBar__title">Product App</h1>
+        </div>
+        <!-- App side navbar -->
+        <div class="appMenu__sideNav">
+          <nav>
+            <ul class="appMenu__navList">
+              <li class="navList__item" onclick="showAdd()">Add product</li>
+              <li class="navList__item" onclick="showDelete()">
+                Delete product
+              </li>
+              <li class="navList__item" onclick="showPrint()">Print</li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- App functionalities -->
+
+        <div class="appMenu__mainContent">
+          <div class="appMenu__landing" id="landing">
+            <h2>Welcome to the Product App menu!</h2>
+            <p class="landing__arrow">←</p>
+            <p class="landing__paragraph">
+              Use the navigation menu to start navigating through the app.
+            </p>
+          </div>
+
+          <!-- Add product -->
+
+          <div id="add" class="appMenu__content add">
+            <h2>Add product</h2>
+            <form id="productForm" class="productForm" action="">
+              <label for="productName">Name of the product: </label>
+              <input
+                type="text"
+                id="productForm__name"
+                placeholder="Product name..."
+              />
+
+              <label for="productPrice">Price of the product: </label>
+              <input
+                type="number"
+                id="productForm__price"
+                placeholder="Product price...."
+              />
+
+              <label for="productPrice">Category of the product: </label>
+              <select name="" id="productForm__category">
+                <option value="" disabled selected>Select an option.</option>
+                <option value="Food">Food</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Furniture">Furniture</option>
+              </select>
+              <input type="submit" value="Add product" />
+              <p id="eventMessage"></p>
+              <p id="idMessage"></p>
+            </form>
+          </div>
+
+          <!-- Delete product -->
+          <div id="delete" class="appMenu__content delete">
+            <h2>Delete product</h2>
+
+            <form id="deleteForm" class="deleteForm" action="">
+              <label for="">Search by:</label>
+              <select id="deleteForm__searchType">
+                <option value="" disabled selected>Select an option.</option>
+                <option value="deleteForm__id">ID</option>
+                <option value="deleteForm__name">Name</option>
+              </select>
+
+              <label for="">Enter value:</label>
+              <input
+                type="text"
+                id="deleteForm__searchValue"
+                placeholder="Product ID or name..."
+              />
+
+              <input type="submit" value="Delete product" />
+              <span id="deleteMessage"></span>
+            </form>
+          </div>
+
+          <!-- Print products -->
+
+          <div id="print" class="appMenu__content print">
+            <div class="print__upper">
+              <h2>Print products</h2>
+              <button class="print__button" id="print__button">
+                Print Buttons
+              </button>
+              <p id="printMessage"></p>
+            </div>
+            <div class="print__down">
+              <div class="printedList">
+                <h3>For in</h3>
+                <ul id="forIn__list"></ul>
+              </div>
+              <div class="printedList">
+                <h3>For of</h3>
+                <ul id="forOf__list"></ul>
+              </div>
+              <div class="printedList">
+                <h3>forEach</h3>
+                <ul id="forEach__list"></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="js/script.js"></script>
+  </body>
+</html>

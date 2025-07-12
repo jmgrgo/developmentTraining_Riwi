@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>User Form</title>
+  </head>
+  <body>
+    <main>
+      <!-- Introduction -->
+      <section class="appTitle">
+        <h1>Local & Session storage</h1>
+      </section>
+
+      <!-- Input form -->
+      <section class="appForm">
+        <h2>Sign up</h2>
+        <form id="signUpForm" class="signUpForm" action="">
+          <label for="">Name</label>
+          <input id="signUpForm__name" type="text" placeholder="Name here..." />
+          <span class="errorMessage"></span>
+          <label for="">Age</label>
+          <input id="signUpForm__age" type="number" placeholder="Age here..." />
+          <span class="errorMessage"></span>
+          <input type="submit" value="Sign up" />
+        </form>
+      </section>
+
+      <!-- Show stored info -->
+      <section class="appUser">
+        <h2>User Information</h2>
+        <div class="appUser__container" id="appUser__container">
+          <strong class="appUser__title">Name:</strong>
+          <span id="appUser__name"></span>
+          <br />
+          <strong class="appUser__title">Age:</strong>
+          <span id="appUser__age"></span>
+        </div>
+        <input type="button" id="clearStorage" value="Clear Storage" />
+      </section>
+
+      <!-- Counter -->
+      <section class="appCounter">
+        <h2>Counter</h2>
+        <div class="appCounter__container" id="appCounter__container">
+          <strong>Users created this session: &ThinSpace;</strong>
+          <span id="appCounter__value"></span>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

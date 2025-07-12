@@ -1,0 +1,298 @@
+@import url("https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+/* General formatting */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Funnel Sans", sans-serif;
+}
+
+/* General Page */
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgba(241, 242, 244, 255);
+}
+
+.appMenu {
+  box-shadow: 0px 2px 5px rgb(125, 125, 125);
+  display: grid;
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 1200px;
+  height: 750px;
+  border-radius: 15px;
+}
+
+/* Title bar */
+
+.appMenu__titleBar {
+  box-shadow: 0px 2px 5px rgb(200, 200, 200);
+  display: flex;
+  align-items: center;
+  grid-column: 1/5;
+  position: relative;
+  padding: 0px 25px;
+  background-color: #ffffff;
+  border-radius: 15px 15px 0px 0px;
+}
+
+/* App title */
+
+.titleBar__title {
+  font-size: 1.4rem;
+  font-weight: lighter;
+}
+
+/* Side bar */
+
+.appMenu__sideNav {
+  box-shadow: 2px 0px 5px rgb(200, 200, 200);
+  grid-row: 2/4;
+  grid-column: 1/2;
+  padding: 25px;
+  background-color: #ffffff;
+  border-radius: 0px 0px 0px 15px;
+}
+
+.appMenu__navList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+}
+
+.navList__item {
+  width: fit-content;
+  transition: all 0.2s ease, background-color 0.09s ease, color 0.09s ease;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.navList__item:hover {
+  box-shadow: 0px 0px 2px rgb(200, 200, 200);
+  transform: scale(1.15);
+  width: fit-content;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.navList__item:active {
+  background-color: black;
+  color: white;
+}
+
+/* Footer info */
+
+.navList__footerInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+/* App content */
+
+.appMenu__mainContent {
+  grid-column: 2/5;
+}
+
+.appMenu__content {
+  display: none;
+  width: 100%;
+}
+
+h2 {
+  margin: 25px;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.active {
+  display: block;
+}
+
+/* Landing */
+
+.appMenu__landing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.landing__paragraph {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.landing__arrow {
+  font-size: 10rem;
+  text-align: center;
+}
+
+/* Add and delete product */
+
+.add,
+.delete {
+  width: 50%;
+  height: 100%;
+  margin: auto;
+}
+
+.productForm,
+.deleteForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.productForm label,
+.deleteForm label {
+  margin-top: 25px;
+  font-size: 1.2rem;
+}
+
+/* Select menus */
+
+.productForm input[type="text"],
+.deleteForm input[type="text"],
+.productForm input[type="number"],
+.productForm select,
+.deleteForm select {
+  outline: none;
+  box-shadow: 0px 1px 3px black;
+  margin-top: 5px;
+  padding: 10px;
+  border: none;
+  border-radius: 7px;
+}
+
+/* Action buttons */
+
+.productForm input[type="submit"],
+.deleteForm input[type="submit"],
+.print__button {
+  box-shadow: 0px 2px 3px black;
+  width: 100%;
+  max-width: 500px;
+  margin-top: 50px;
+  padding: 15px;
+  transition: translate 0.3s ease, transform 0.05s ease-in-out;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.3rem;
+}
+
+.productForm input[type="submit"]:hover,
+.deleteForm input[type="submit"]:hover,
+.print__button:hover {
+  translate: 0px -2px;
+}
+
+.productForm input[type="submit"]:active,
+.deleteForm input[type="submit"]:active,
+.print__button:active {
+  transform: scale(0.95);
+  background-color: black;
+  color: white;
+}
+
+#eventMessage,
+#idMessage,
+#deleteMessage {
+  margin-top: 15px;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+/* Print info */
+
+h3 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.print__upper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.print__button {
+  margin: 25px auto;
+  padding: 20px;
+}
+
+.print__down {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.printedList ul {
+  box-shadow: 0px 5px 5px rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-y: scroll;
+  max-height: 350px;
+  margin-top: 25px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  list-style: none;
+}
+
+#printMessage {
+  margin-top: 15px;
+  font-size: 1.4rem;
+  color: rgb(140, 0, 0);
+  text-align: center;
+}
+
+/* Media queries for mobile devices*/
+
+@media screen and (max-width: 480px) {
+}
+.appMenu {
+  box-shadow: 0px 2px 5px rgb(125, 125, 125);
+  display: grid;
+  grid-template-rows: 60px 80px 1fr;
+  grid-template-columns: 1fr;
+}
+
+.appMenu__titleBar {
+  grid-row: 1/2;
+  grid-column: 1/2;
+}
+
+.appMenu__sideNav {
+  grid-row: 2/3;
+  grid-column: 1/2;
+  border-radius: 0;
+}
+
+.appMenu__navList {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.appMenu__mainContent {
+  grid-row: 3/4;
+  grid-column: 1/2;
+}
+
+.landing__arrow {
+  rotate: 90deg;
+}

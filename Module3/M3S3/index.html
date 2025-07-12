@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Product Inventory</title>
+  </head>
+  <body>
+    <main>
+      <section class="appWindow">
+        <div class="addProduct">
+          <h1>Stock Management</h1>
+        </div>
+
+        <form action="productForm">
+          <div class="formInputs">
+            <input
+              type="text"
+              id="productName"
+              placeholder="Product name..."
+              required
+            />
+            <input
+              type="number"
+              id="productPrice"
+              placeholder="Product price..."
+              required
+            />
+          </div>
+          <input type="submit" value="Add product" />
+        </form>
+
+        <table id="productTable">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="productList"></tbody>
+        </table>
+
+        <script src="./js/script.js"></script>
+      </section>
+    </main>
+  </body>
+</html>

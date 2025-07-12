@@ -1,0 +1,29 @@
+{
+  "products": [
+    {
+      "id": "c334",
+      "name": "Samsung Galaxy Tab S9+",
+      "price": 1099
+    },
+    {
+      "id": "cd37",
+      "name": "Anker 737 Power Bank",
+      "price": 139
+    },
+    {
+      "id": "18fb",
+      "name": "Corsair K100 RGB Mechanical Keyboard",
+      "price": 229
+    },
+    {
+      "id": "e277",
+      "name": "NVIDIA Shield TV Pro",
+      "price": 199
+    },
+    {
+      "id": "566a",
+      "name": "Apple iPad Air",
+      "price": 599
+    }
+  ]
+}

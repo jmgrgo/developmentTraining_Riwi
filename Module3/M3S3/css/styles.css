@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+/* General formatting */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Funnel Sans", sans-serif;
+}
+
+body {
+  background-color: rgba(241, 242, 244, 255);
+}
+
+/* Page and app window */
+
+.appWindow {
+  box-shadow: 0px 2px 5px rgb(125, 125, 125);
+  width: 1200px;
+  height: fit-content;
+  margin: 50px auto;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 15px;
+}
+
+/* App title and add product button */
+
+.addProduct {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* App header */
+
+.addProduct h1 {
+  font-size: 2rem;
+}
+
+/* Add product form */
+
+form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.formInputs {
+  display: flex;
+  gap: 20px;
+}
+
+/* Styles for form inputs */
+
+form input[type="text"],
+form input[type="number"] {
+  box-shadow: 0px 1px 3px black;
+  width: 250px;
+  height: 40px;
+  padding: 0px 15px;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Submit button */
+
+form input[type="submit"] {
+  width: 250px;
+  height: 50px;
+  transition: all 0.3s ease-in-out, background-color 0.1s ease;
+  background-color: #2563eb;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  color: white;
+}
+
+form input[type="submit"]:hover {
+  transform: scale(1.02);
+  background-color: #2058cf;
+}
+
+form input[type="submit"]:active {
+  background-color: black;
+}
+
+/* Table */
+
+#productTable {
+  border-collapse: collapse;
+  box-shadow: 0px 0px 4px rgb(125, 125, 125);
+  overflow-y: scroll;
+  width: 100%;
+  margin: 30px auto;
+  background-color: #ffffff;
+  border-radius: 12px;
+}
+
+/* Table Header */
+
+#productTable thead {
+  background-color: #2563eb;
+  color: white;
+}
+
+#productTable th,
+#productTable td {
+  padding: 16px 20px;
+  text-align: center;
+}
+
+/* Table Rows */
+
+#productTable tbody tr {
+  transition: background-color 0.2s ease-in-out;
+  border-bottom: 1px solid #eaeaea;
+}
+
+#productTable tbody tr:hover {
+  background-color: #f5f7fa;
+}
+
+/* Action Buttons */
+
+#productTable td button {
+  width: 80px;
+  margin-right: 8px;
+  padding: 6px 12px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* Edit Button */
+
+#productTable td button:first-child {
+  background-color: #00b894;
+  color: white;
+}
+
+#productTable td button:first-child:hover {
+  background-color: #019875;
+}
+
+/* Delete Button */
+
+#productTable td button:last-child {
+  background-color: #d63031;
+  color: white;
+}
+
+#productTable td button:last-child:hover {
+  background-color: #b72b2b;
+}
