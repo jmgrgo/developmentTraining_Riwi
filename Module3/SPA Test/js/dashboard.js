@@ -1,4 +1,4 @@
-// Show user info
+// Show the logged-in user's information in the dashboard
 function renderUserInfo() {
   const showName = document.getElementById("userInfo__name");
   const showEmail = document.getElementById("userInfo__email");
@@ -7,6 +7,7 @@ function renderUserInfo() {
   const showRole = document.getElementById("userInfo__role");
   const showEnrollNumber = document.getElementById("userInfo__enrollNumber");
   const showDateOfAdmission = document.getElementById("userInfo__dateOfAdmission");
+  // Fill the fields with data from localStorage
   showName.textContent = localStorage.getItem("name");
   showEmail.textContent = localStorage.getItem("email");
   showPassword.textContent = localStorage.getItem("password");
@@ -16,9 +17,11 @@ function renderUserInfo() {
   showDateOfAdmission.textContent = localStorage.getItem("dateOfAdmission");
 }
 
+// Show the admin panel for users with the 'admin' role
 function renderAdminPanel() {
   const container = document.getElementById("dashboard__adminContent");
   const adminSection = document.createElement("section");
+  // Admin panel HTML: create course form, courses list, users list
   adminSection.innerHTML = `
     <h3>Create new course</h3>
     <form id="createCourseForm">
@@ -40,6 +43,7 @@ function renderAdminPanel() {
   `;
   container.appendChild(adminSection);
 
+  // Handle course creation form submission
   document.getElementById("createCourseForm").addEventListener("submit", async (e) => {
     e.preventDefault();
     const title = document.getElementById("courseTitle").value.trim();
@@ -55,6 +59,7 @@ function renderAdminPanel() {
     renderCourses();
   });
 
+  // Render the list of courses with delete buttons
   async function renderCourses() {
     const res = await fetch("http://localhost:3000/courses");
     const courses = await res.json();
@@ -66,6 +71,7 @@ function renderAdminPanel() {
       const delBtn = document.createElement("button");
       delBtn.textContent = "Delete";
       delBtn.style.marginLeft = "1em";
+      // Delete course on click
       delBtn.onclick = async () => {
         if (confirm(`Are you sure you want to delete the course '${course.title}'?`)) {
           await fetch(`http://localhost:3000/courses/${course.id}`, { method: "DELETE" });
@@ -78,6 +84,7 @@ function renderAdminPanel() {
   }
   renderCourses();
 
+  // Render the list of users with delete buttons
   async function renderUsers() {
     const res = await fetch("http://localhost:3000/users");
     const users = await res.json();
@@ -89,6 +96,7 @@ function renderAdminPanel() {
       const delBtn = document.createElement("button");
       delBtn.textContent = "Delete";
       delBtn.style.marginLeft = "1em";
+      // Delete user on click
       delBtn.onclick = async () => {
         if (confirm(`Are you sure you want to delete the user '${user.name}'?`)) {
           await fetch(`http://localhost:3000/users/${user.id}`, { method: "DELETE" });
@@ -102,7 +110,9 @@ function renderAdminPanel() {
   renderUsers();
 }
 
+// Show user info always
 renderUserInfo();
+// Show admin panel only if the logged user is an admin
 if (localStorage.getItem("role") === "admin") {
   renderAdminPanel();
 }
