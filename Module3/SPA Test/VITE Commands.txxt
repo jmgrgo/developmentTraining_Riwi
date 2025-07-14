@@ -1,0 +1,12 @@
+1. Instalar vite
+npm install -D vite
+
+2. Inicializar package.json
+npm init -y
+
+3. package.json
+scripts "dev" : "vite"
+
+3. Iniciar servidor local
+npm run dev
+

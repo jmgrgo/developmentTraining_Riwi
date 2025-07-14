@@ -1,0 +1,30 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Admin",
+      "email": "admin@admin.com",
+      "password": "admin123",
+      "role": "admin",
+      "phone": "1234567890",
+      "enrollNumber": "98765432100000",
+      "dateOfAdmission": "01-Jan-2020"
+    }
+  ],
+  "courses": [
+    {
+      "id": "3e4a",
+      "title": "Curso 1",
+      "description": "Descripcion curso 1",
+      "startDate": "21-Jul-2025",
+      "duration": "5 semanas"
+    }
+  ],
+  "enrollments": [
+    {
+      "id": "1",
+      "userId": 2,
+      "courseId": 1
+    }
+  ]
+}
