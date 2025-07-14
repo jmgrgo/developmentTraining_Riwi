@@ -1,0 +1,32 @@
+<!-- Sign Up page -->
+
+<h2 class="signUp__title">Sign Up</h2>
+<p class="signUp__paragraph">Create an account</p>
+
+<!-- Sign Up form -->
+<form action="" id="signUpForm" class="signUpForm">
+  <label class="signUpForm__label" for="">Name</label>
+  <input id="signUpForm__name" class="signUpForm__input" type="text" required />
+
+  <label class="signUpForm__label" for="">Password</label>
+  <input
+    id="signUpForm__password"
+    class="signUpForm__input"
+    type="password"
+    required
+  />
+  <label class="signUpForm__label" for="">Confirm password</label>
+  <input
+    id="signUpForm__confirmPassword"
+    class="signUpForm__input"
+    type="password"
+    required
+  />
+  <label class="signUpForm__label" for="">Role</label>
+  <select name="" id="signUpForm__role" class="signUpForm__input" required>
+    <option selected disabled value="">Select an option</option>
+    <option value="user">Visitor</option>
+    <option value="admin">Admin</option>
+  </select>
+  <input id="signUpForm__button" type="submit" value="Sign Up" />
+</form>

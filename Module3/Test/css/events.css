@@ -1,0 +1,6 @@
+.eventsContainer{
+    margin-top: 20px;
+    display: flex;
+    gap: 10%;
+    flex-wrap: wrap;
+}

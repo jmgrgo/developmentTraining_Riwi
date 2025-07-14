@@ -1,0 +1,53 @@
+.logIn__title{
+    text-align: center;
+    font-size: 2.0rem;
+}
+
+.logIn__paragraph{
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+.logInForm{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.logInForm label{
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+.logInForm input{
+    margin-top: 5px;
+    width: 200px;
+    height: 30px;
+    padding: 0px 10px;
+    border-radius: 7px;
+    border: none;
+    box-shadow: 0px 1px 5px black;
+}
+
+.logInForm input[type="submit"]{
+    margin-top: 40px;
+    height: 40px;
+    color: white;
+    background-color: #7731fe;
+    border: none;
+    border-radius: 7px;
+    transition: transform .1s ease-in-out, background-color .05s ease-in-out;
+    font-size: 1.1rem;
+    box-shadow: 0px 1px 5px black;
+    text-shadow: 0px 0px 5px black;
+}
+
+.logInForm input[type="submit"]:hover{
+    transform: scale(1.05);
+}
+
+.logInForm input[type="submit"]:active{
+    background-color: black;
+}

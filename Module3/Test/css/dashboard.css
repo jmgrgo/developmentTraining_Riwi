@@ -1,0 +1,16 @@
+.dashboard__title{
+    text-align: center;
+}
+
+.userInfoPanel{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 40px;
+}
+
+strong{
+    font-size: 1.6rem;
+}
+
+span{font-size: 1.4rem;}

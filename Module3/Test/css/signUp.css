@@ -1,0 +1,58 @@
+.signUp__title{
+    text-align: center;
+    font-size: 2.0rem;
+}
+
+.signUp__paragraph{
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+.signUpForm{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.signUpForm label{
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+.signUpForm input, .signUpForm select{
+    margin-top: 5px;
+    width: 200px;
+    height: 30px;
+    padding: 0px 10px;
+    border-radius: 7px;
+    border: none;
+    box-shadow: 0px 1px 5px black;
+}
+
+.signUpForm input:active{
+    border: none;
+}
+
+.signUpForm input[type="submit"]{
+    margin-top: 20px;
+    height: 40px;
+    color: white;
+    background-color: #7731fe;
+    border: none;
+    border-radius: 7px;
+    transition: transform .1s ease-in-out, background-color .05s ease-in-out;
+    font-size: 1.1rem;
+    box-shadow: 0px 1px 5px black;
+    text-shadow: 0px 0px 5px black;
+    cursor: "pointer";
+}
+
+.signUpForm input[type="submit"]:hover{
+    transform: scale(1.05);
+}
+
+.signUpForm  input[type="submit"]:active{
+    background-color: black;
+}

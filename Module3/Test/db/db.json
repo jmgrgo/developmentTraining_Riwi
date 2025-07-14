@@ -1,0 +1,38 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "admin",
+      "password": "admin123",
+      "role": "admin"
+    },
+    {
+      "id": "8ffc",
+      "name": "user",
+      "password": "user123",
+      "role": "user"
+    }
+  ],
+  "events": [
+    {
+      "id": "0489",
+      "title": "Event 2",
+      "description": "Event 2 description",
+      "place": "Event 2 place",
+      "duration": "Event 2 duration",
+      "capacity": 18
+    }
+  ],
+  "enrollments": [
+    {
+      "id": "5c37",
+      "userId": "8ffc",
+      "eventId": null
+    },
+    {
+      "id": "b9f0",
+      "userId": "8ffc",
+      "eventId": "0489"
+    }
+  ]
+}
