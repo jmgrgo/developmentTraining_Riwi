@@ -10,9 +10,14 @@ form.addEventListener("submit", async (e) => {
   e.preventDefault(); // Prevents reload from form submission
 
   // Get form values
-  const bill_number = parseInt(document.getElementById("bill-number").value, 10);
+  const bill_number = parseInt(
+    document.getElementById("bill-number").value,
+    10
+  );
   const billing_period = document.getElementById("bill-period").value;
-  const invoiced_amount = parseInt(document.getElementById("bill-invoiced").value);
+  const invoiced_amount = parseInt(
+    document.getElementById("bill-invoiced").value
+  );
   const paid_amount = parseInt(document.getElementById("bill-paid").value);
 
   // Validate bill number
@@ -56,7 +61,7 @@ form.addEventListener("submit", async (e) => {
       bill_number,
       billing_period,
       invoiced_amount,
-      paid_amount
+      paid_amount,
     },
   ]);
 
@@ -72,6 +77,12 @@ form.addEventListener("submit", async (e) => {
 
 // Get the bill section element from the DOM
 const billSection = document.querySelector(".section--bills");
+
+/**
+ * Creates a card element for an bill and sets up edit/remove handlers.
+ * @param {Object} bill - The bill object to display
+ * @returns {HTMLElement} - The card element
+ */
 
 // Create bill card to display info
 function createBillCard(bill) {
@@ -140,7 +151,6 @@ function createBillCard(bill) {
   return card;
 }
 
-
 // Render all clients
 async function loadBills() {
   const { data: bills, error } = await supabase.from("bill").select("*");
@@ -155,6 +165,13 @@ async function loadBills() {
 
   renderBills(window._allBills);
 }
+
+
+/**
+ * Renders bill cards in the bills section.
+ * Removes old cards and adds new ones for each bill.
+ * @param {Array} bills - Array of bill objects
+ */
 
 function renderBills(bills) {
   // Remove existing bill cards
@@ -174,9 +191,7 @@ function renderBills(bills) {
 const searchInput = document.getElementById("bill-search-input");
 const searchBtn = document.getElementById("bill-search-btn");
 
-/**
- * Filters bills by search query and renders the filtered list.
- */
+// Filters bills by search query and renders the filtered list.
 function filterBills() {
   const query = searchInput.value.trim().toLowerCase();
   if (!window._allBills) return;
@@ -184,11 +199,12 @@ function filterBills() {
     renderBills(window._allBills);
     return;
   }
-  // Filter by name, email, phone, or specialty
+  
+  // Filter by bill number, billing period, invoiced amount or paid amount
   const filtered = window._allBills.filter((bill) => {
     return (
-      bill.bill_number.includes(query) ||
-      bill.billing_period.includes(query)
+      String(bill.bill_number).includes(query) ||
+      String(bill.billing_period).includes(query)
     );
   });
 
@@ -197,6 +213,7 @@ function filterBills() {
 
 // Search button click handler
 searchBtn.addEventListener("click", filterBills);
+
 // Search input Enter key handler
 searchInput.addEventListener("keydown", function (e) {
   if (e.key === "Enter") {
@@ -207,13 +224,7 @@ searchInput.addEventListener("keydown", function (e) {
 // Load bills when the page is loaded
 document.addEventListener("DOMContentLoaded", loadBills);
 
-/**
- * Opens the edit form for a bill card.
- * Replaces the card's HTML with a form pre-filled with the bill's data.
- * Allows editing and saving changes, or cancelling to restore the original card.
- * @param {Object} bill - The bill object to edit
- * @param {HTMLElement} card - The card element to replace
- */
+// Edit card form
 function openEditForm(bill, card) {
   // Replace card content with an edit form
   card.innerHTML = `
@@ -241,25 +252,29 @@ function openEditForm(bill, card) {
     </form>
   `;
 
+  // Get references to the form and cancel button
   const form = card.querySelector(".edit-form");
   const cancelBtn = form.querySelector(".cancel-btn");
 
+  // Cancel button handler
   cancelBtn.addEventListener("click", () => {
     const newCard = createBillCard(bill);
     card.replaceWith(newCard);
   });
 
+  // Save button handler (submit form)
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
+    // Get updated values from the form
     const formData = new FormData(form);
-
     const updatedBill = {
       billing_period: formData.get("billing_period"),
       invoiced_amount: parseInt(formData.get("invoiced_amount")),
       paid_amount: parseInt(formData.get("paid_amount")),
     };
 
+    // Validate required fields
     if (
       !updatedBill.billing_period ||
       !updatedBill.invoiced_amount ||
@@ -271,23 +286,26 @@ function openEditForm(bill, card) {
       return;
     }
 
+    // Update transaction in Supabase
+
     const { error } = await supabase
       .from("bill")
       .update(updatedBill)
       .eq("bill_number", bill.bill_number);
 
+    // Show result and update card
     if (error) {
       alert("Error updating bill: " + error.message);
       return;
+    } else {
+      alert("Bill updated successfully.");
+
+      const newCard = createBillCard({
+        bill_number: bill.bill_number,
+        ...updatedBill,
+      });
+      card.replaceWith(newCard);
     }
-
-    alert("Bill updated successfully.");
-
-    const newCard = createBillCard({
-      bill_number: bill.bill_number,
-      ...updatedBill,
-    });
-    card.replaceWith(newCard);
   });
 }
 
@@ -295,19 +313,18 @@ function openEditForm(bill, card) {
 let parsedData = [];
 
 // Event listener for CSV file input change
-// When a file is selected, parse it using PapaParse
 document.getElementById("csv-upload").addEventListener("change", function (e) {
-  const file = e.target.files[0]; // Get the selected file
-  if (!file) return; // If no file, do nothing
+  const file = e.target.files[0]; 
+  if (!file) return; 
   Papa.parse(file, {
-    header: true, // Treat first row as header
-    skipEmptyLines: true, // Ignore empty lines
+    header: true,
+    skipEmptyLines: true,
     complete: function (results) {
-      // Save parsed data to array
       parsedData = results.data;
-      console.log("Parsed bill data:", parsedData); // Log parsed data for debugging
+      console.log("Parsed bill data:", parsedData);
     },
     error: function (err) {
+
       // Log any error that occurs during parsing
       console.error("Error reading bill CSV:", err);
     },
@@ -315,7 +332,6 @@ document.getElementById("csv-upload").addEventListener("change", function (e) {
 });
 
 // Event listener for CSV upload button click
-// When clicked, validate and import the parsed data into Supabase
 document
   .getElementById("upload-btn")
   .addEventListener("click", async function () {
@@ -335,7 +351,7 @@ document
         row.invoiced_amount &&
         !isNaN(parseInt(row.invoiced_amount)) &&
         row.paid_amount &&
-        !isNaN(parseInt(row.paid_amount)) 
+        !isNaN(parseInt(row.paid_amount))
       );
     });
 

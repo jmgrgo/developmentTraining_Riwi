@@ -102,10 +102,12 @@ form.addEventListener("submit", async (e) => {
 });
 
 /**
- * Creates a card element for an transaction and sets up edit/remove handlers.
- * @param {Object} transaction - The transaction object to display
+ * Creates a card element for an client and sets up edit/remove handlers.
+ * @param {Object} transaction - The client object to display
  * @returns {HTMLElement} - The card element
  */
+
+// Create transaction card to display info
 function createTransactionCard(transaction) {
   const card = document.createElement("div");
   card.className = "section__item item item--transaction";
@@ -175,8 +177,14 @@ async function loadTransactions() {
   renderTransactions(window._allTransactions);
 }
 
-// Render all transactions
 
+/**
+ * Renders transaction cards in the transactions section.
+ * Removes old cards and adds new ones for each transaction.
+ * @param {Array} transactions - Array of transaction objects
+ */
+
+// Render all transactions
 function renderTransactions(transactions) {
   // Remove existing transaction cards
   transactionsSection
@@ -204,10 +212,10 @@ function filterTransactions() {
   // Filter by transaction ID, client ID, bill number, date, state.
   const filtered = window._allTransactions.filter((transaction) => {
     return (
-      transaction.transaction_id.includes(query) ||
-      transaction.client_id.includes(query) ||
-      transaction.bill_number.includes(query) ||
-      transaction.datetime.includes(query) ||
+      String(transaction.transaction_id).includes(query) ||
+      String(transaction.client_id).includes(query) ||
+      String(transaction.bill_number).includes(query) ||
+      String(transaction.datetime).includes(query) ||
       transaction.state.includes(query)
     );
   });
@@ -261,7 +269,7 @@ function openEditForm(transaction, card) {
 
       <div class="form__field">
         <label class="form__label">State:</label>
-        <select class="form__input" name="state" required>
+        <select class="form__input" name="transaction_state" required>
           <option value="Pendiente" ${
             transaction.state === "Pendiente" ? "selected" : ""
           }>Pendiente</option>
@@ -274,10 +282,8 @@ function openEditForm(transaction, card) {
         </select>
       </div>
             <div class="form__field">
-        <label>State:</label>
-        <input disabled class="form__input" type="time" name="state" value="${
-          transaction.type
-        }" required />
+        <label>Type:</label>
+        <input disabled class="form__input" type="text" name="transaction_type" value="Pago de Factura" required />
       </div>
       <div class="form__edit-buttons">
         <button type="submit" class="form__button">Save</button>
@@ -292,7 +298,7 @@ function openEditForm(transaction, card) {
 
   // Cancel button handler (restore card view)
   cancelBtn.addEventListener("click", () => {
-    card.replaceWith(createTransactionCard(app));
+    card.replaceWith(createTransactionCard(transaction));
   });
 
   // Save button handler (submit form)
@@ -305,7 +311,8 @@ function openEditForm(transaction, card) {
       client_id: parseInt(formData.get("client_id"), 10),
       bill_number: parseInt(formData.get("bill_number"), 10),
       datetime: formData.get("datetime"),
-      state: formData.get("state") || null,
+      state: formData.get("transaction_state"),
+      type: formData.get("transaction_type") || "Pago de factura",
     };
 
     // Validate required fields
@@ -325,7 +332,7 @@ function openEditForm(transaction, card) {
     const { data: clientExist } = await supabase
       .from("client")
       .select("client_id")
-      .eq("client_id", updated.client_id)
+      .eq("client_id", updatedTransaction.client_id)
       .single();
     if (!clientExist) return alert("Client does not exist.");
 
@@ -333,14 +340,14 @@ function openEditForm(transaction, card) {
     const { data: billExists } = await supabase
       .from("bill")
       .select("bill_number")
-      .eq("bill_number", updated.bill_number)
+      .eq("bill_number", updatedTransaction.bill_number)
       .single();
     if (!billExists) return alert("Bill does not exist.");
 
     // Update transaction in Supabase
     const { error } = await supabase
       .from("transaction")
-      .update(updated)
+      .update(updatedTransaction)
       .eq("transaction_id", transaction.transaction_id);
 
     // Show result and update card
@@ -351,7 +358,7 @@ function openEditForm(transaction, card) {
       card.replaceWith(
         createTransactionCard({
           transaction_id: transaction.transaction_id,
-          ...updated,
+          ...updatedTransaction,
         })
       );
     }

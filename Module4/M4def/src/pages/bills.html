@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Clients</title>
+    <title>Bills</title>
   </head>
   <body>
-    <!-- Header section: displays the app name and user info -->
+    <!-- Header section -->
     <header class="header">
-      <h2>Vida Sana Software</h2>
+      <h2>Financial App Software</h2>
       <div class="header__user">
         <h2>Admin</h2>
         <img
@@ -19,16 +19,16 @@
       </div>
     </header>
 
-    <!-- Sidebar navigation: contains profile, navigation links, and footer info -->
+    <!-- Sidebar navigation -->
     <aside class="aside">
       <!-- Profile Section -->
       <div class="asideProfile">
         <img
           class="asideProfile__icon"
           src="../assets/icons/adhesive-plaster-svgrepo-com.svg"
-          alt="Vida Sana icon"
+          alt="Financial App icon"
         />
-        <h2 class="asideProfile__name">Vida Sana</h2>
+        <h2 class="asideProfile__name">Financial App</h2>
       </div>
 
       <!-- Navigation links to other pages -->
@@ -45,18 +45,18 @@
               <span class="asideNav__text">Home</span>
             </a>
           </li>
-          <!-- Clients page link (current) -->
+          <!-- Clients page link -->
           <li class="asideNav__item">
             <a href="./clients.html" class="asideNav__link">
               <img
                 class="asideNav__icon"
                 src="../assets/icons/user-plus-svgrepo-com.svg"
-                alt="Client icon"
+                alt="Medic icon"
               />
               <span class="asideNav__text">Clients</span>
             </a>
           </li>
-          <!-- Bills page link -->
+          <!-- Bills page link (current) -->
           <li class="asideNav__item">
             <a href="./bills.html" class="asideNav__link">
               <img
@@ -81,99 +81,92 @@
         </ul>
       </nav>
 
-      <!-- Footer: additional info -->
+      <!-- Footer -->
       <footer class="asideFooter">
         <img
           class="asideFooter__icon"
           src="../assets/icons/adhesive-plaster-svgrepo-com.svg"
           alt="Jermox icon"
         />
-        <h2 class="asideFooter__title">Vida Sana</h2>
+        <h2 class="asideFooter__title">Financial App</h2>
         <p class="asideFooter__info">More info at: xxxxxxxxxxxxxx</p>
       </footer>
     </aside>
 
-    <!-- Main content: client management -->
+    <!-- Main content -->
     <main class="main">
-      <!-- Section header: icon and title -->
+      <!-- Section header -->
       <div class="section__header">
         <img
-          src="../assets/icons/user-plus-svgrepo-com.svg"
-          alt="Clients list"
+          src="../assets/icons/users-group-rounded-svgrepo-com.svg"
+          alt="Bills list"
           class="section__icon"
         />
-        <h2 class="section__title">Clients</h2>
+        <h2 class="section__title">Bills</h2>
       </div>
 
-      <!-- Introduction section: client creation and CSV upload -->
+      <!-- Introduction section: bill creation and CSV upload -->
       <div class="section__introduction">
-        <!-- New Client Form -->
-        <div class="form form--client" id="new-client-form">
-          <h3 class="form__title">New Client</h3>
-          <!-- Form for creating a new client -->
+        <!-- New Bill Form -->
+        <div class="form form--bill" id="new-bill-form">
+          <h3 class="form__title">New Bill</h3>
+          <!-- Form for creating a new bill -->
           <form class="form__body">
-            <!-- Client ID input -->
+            <!-- Bill ID input -->
             <div class="form__field">
-              <label class="form__label" for="client-id">ID</label>
+              <label class="form__label" for="bill-number">Bill Number</label>
               <input
                 class="form__input"
                 type="number"
-                id="client-id"
-                name="client_id"
+                id="bill-number"
+                name="bill_number"
                 required
               />
             </div>
-            <!-- Full Name input -->
+            <!-- Date input -->
             <div class="form__field">
-              <label class="form__label" for="client-name">Full Name</label>
-              <input
-                class="form__input"
-                type="text"
-                id="client-name"
-                name="full_name"
-                required
-              />
-            </div>
-            <!-- Address input -->
-            <div class="form__field">
-              <label class="form__label" for="client-address">Address</label>
-              <textarea
-                class="form__input"
-                id="client-address"
-                name="address"
-                required
+              <label class="form__label" for="bill-period"
+                >Billing period</label
               >
-              </textarea>
-            </div>
-            <!-- Phone input -->
-            <div class="form__field">
-              <label class="form__label" for="client-phone">Phone</label>
               <input
                 class="form__input"
-                type="tel"
-                id="client-phone"
-                name="phone"
-                required
-              />
-            </div>
-            <!-- Email input -->
-            <div class="form__field">
-              <label class="form__label" for="client-email">Email</label>
-              <input
-                class="form__input"
-                type="email"
-                id="client-email"
-                name="email"
+                type="month"
+                id="bill-period"
+                name="billing_period"
                 required
               />
             </div>
 
-            <!-- Submit button for creating client -->
+            <!-- Invoiced amount input -->
+            <div class="form__field">
+              <label class="form__label" for="bill-invoiced"
+                >Invoiced amount</label
+              >
+              <input
+                class="form__input"
+                type="number"
+                id="bill-invoiced"
+                name="invoiced_amount"
+                required
+              />
+            </div>
+            <!-- Paid amount input -->
+            <div class="form__field">
+              <label class="form__label" for="bill-paid">Paid amount</label>
+              <input
+                class="form__input"
+                type="number"
+                id="bill-paid"
+                name="paid_amount"
+                required
+              />
+            </div>
+            <!-- Submit button for creating bill -->
             <button type="submit" class="form__button">Create</button>
           </form>
         </div>
 
-        <!-- CSV Upload Section: allows bulk import of clients -->
+        <!-- CSV upload section -->
         <div class="upload-button-section form">
           <h3 class="form__title">Upload CSV File</h3>
           <div class="form__body">
@@ -194,23 +187,24 @@
           </div>
         </div>
       </div>
-      <!-- Client list section: search and display clients -->
-      <section class="section section--clients">
+
+      <!-- Bill list section: search and display bills -->
+      <section class="section section--bills">
         <div class="section__nav">
-          <!-- Search input for filtering clients -->
+          <!-- Search input for filtering bills -->
           <input
             type="search"
             class="section__search"
-            id="client-search-input"
-            placeholder="Search by ID, name, address, phone, email..."
+            id="bill-search-input"
+            placeholder="Search by bill number, billing period..."
           />
           <!-- Search button -->
-          <button id="client-search-btn" class="section__button">Search</button>
+          <button id="bill-search-btn" class="section__button">Search</button>
         </div>
       </section>
     </main>
-    <!-- Main JS entry and client logic -->
+    <!-- Main JS entry and bill logic -->
     <script type="module" src="/src/main.js"></script>
-    <script type="module" src="/src/js/client.js"></script>
+    <script type="module" src="/src/js/bill.js"></script>
   </body>
 </html>

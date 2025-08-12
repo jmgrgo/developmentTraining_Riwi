@@ -156,6 +156,8 @@ async function loadClients() {
   renderClients(window._allClients);
 }
 
+
+// Create client card to display info
 function renderClients(clients) {
   // Remove existing client cards
   const existingCards = clientSection.querySelectorAll(
@@ -182,14 +184,14 @@ function filterClients() {
     renderClients(window._allClients);
     return;
   }
-  // Filter by name, email, phone, or specialty
+
+  // Filter by name, address, email or phone
   const filtered = window._allClients.filter((client) => {
     return (
       client.full_name.toLowerCase().includes(query) ||
       client.address.toLowerCase().includes(query) ||
       client.email.toLowerCase().includes(query) ||
-      client.phone.toLowerCase().includes(query) ||
-      client.specialty.toLowerCase().includes(query)
+      client.phone.toLowerCase().includes(query)
     );
   });
   renderClients(filtered);
@@ -197,8 +199,8 @@ function filterClients() {
 
 // Search button click handler
 searchBtn.addEventListener("click", filterClients);
-// Search input Enter key handler
 
+// Search input Enter key handler
 searchInput.addEventListener("keydown", function (e) {
   if (e.key === "Enter") {
     filterClients();
@@ -208,6 +210,7 @@ searchInput.addEventListener("keydown", function (e) {
 // Load clients when the page is loaded
 document.addEventListener("DOMContentLoaded", loadClients);
 
+// Edit card form
 function openEditForm(client, card) {
   // Replace card content with an edit form
   card.innerHTML = `
@@ -308,16 +311,15 @@ let parsedData = [];
 // Event listener for CSV file input change
 document.getElementById("csv-upload").addEventListener("change", function (e) {
   const file = e.target.files[0];
-  if (!file) return; 
+  if (!file) return;
   Papa.parse(file, {
-    header: true, 
+    header: true,
     skipEmptyLines: true,
     complete: function (results) {
       parsedData = results.data;
       console.log("Parsed client data:", parsedData);
     },
     error: function (err) {
-
       // Log any error that occurs during parsing
       console.error("Error reading client CSV:", err);
     },
@@ -328,7 +330,6 @@ document.getElementById("csv-upload").addEventListener("change", function (e) {
 document
   .getElementById("upload-btn")
   .addEventListener("click", async function () {
-
     // If no parsed data, show alert and stop
     if (!parsedData.length) {
       alert("Please select a valid CSV file first.");

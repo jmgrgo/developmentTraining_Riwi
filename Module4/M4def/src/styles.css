@@ -1,10 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap");
 
-/* =========================
-   Global Styles
-   =========================
-   Sets up box model, resets margin/padding, and applies font family.
-*/
+
+/* Global Styles */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,24 +10,19 @@
   font-family: "Funnel Display", sans-serif;
 }
 
-/* Ensure full height for html and body */
 html,
 body {
   height: 100%;
 }
 
-/* Main grid layout: sidebar and main content */
+/* Main grid layout */
 body {
   display: grid;
   grid-template-rows: 60px 1fr; /* Header and main */
   grid-template-columns: 250px 1fr; /* Sidebar and main */
 }
 
-/* =========================
-   Header Styles
-   =========================
-   Styles for the top header bar, user info, and logout icon.
-*/
+/* Header Styles */
 .header {
   grid-column: 2/3;
   z-index: 10;
@@ -64,11 +57,7 @@ body {
   background-color: rgb(146, 146, 146);
 }
 
-/* =========================
-   Sidebar (Aside) Layout
-   =========================
-   Styles for the fixed sidebar, profile, navigation, and footer.
-*/
+/* Sidebar (Aside) Layout */
 .aside {
   grid-row: 1/3;
   grid-column: 1/2;
@@ -81,11 +70,7 @@ body {
   grid-template-rows: 120px auto 150px;
 }
 
-/* =========================
-   Aside Profile Section
-   =========================
-   Styles for the profile icon and name at the top of the sidebar.
-*/
+/* Aside Profile Section */
 .asideProfile {
   display: flex;
   justify-content: center;
@@ -108,11 +93,7 @@ body {
   color: #333;
 }
 
-/* =========================
-   Aside Navigation Section
-   =========================
-   Styles for navigation links and icons in the sidebar.
-*/
+/* Aside Navigation Section */
 .asideNav {
   grid-row: 2/3;
 }
@@ -158,11 +139,7 @@ body {
   font-size: 1rem;
 }
 
-/* =========================
-   Aside Footer Section
-   =========================
-   Styles for the sidebar footer info and icon.
-*/
+/* Aside Footer Section */
 .asideFooter {
   display: flex;
   flex-direction: column;
@@ -189,11 +166,7 @@ body {
   font-size: 0.9rem;
 }
 
-/* =========================
-   Main Content Area
-   =========================
-   Styles for the main content area next to the sidebar.
-*/
+/* Main Content Area */
 .main {
   grid-row: 2/3;
   grid-column: 2/3;
@@ -202,11 +175,7 @@ body {
 }
 
 
-/* =========================
-   Section Layout
-   =========================
-   Styles for main sections, headers, icons, search, and buttons.
-*/
+/* Section Layout */
 .section {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -273,11 +242,7 @@ body {
 }
 
 
-/* =========================
-   Item Card Styles
-   =========================
-   Styles for cards representing medics, patients, diagnoses, appointments.
-*/
+/* Item Card Styles */
 .section__item {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   border: 2px solid #e9e3e1;
@@ -323,11 +288,7 @@ body {
   margin-bottom: 10px;
 }
 
-/* =========================
-   Card Buttons
-   =========================
-   Styles for edit/remove buttons on cards.
-*/
+/* Card Buttons */
 .item__buttons {
   display: flex;
   justify-content: space-between;
@@ -353,11 +314,7 @@ body {
   background-color: rgb(110, 110, 110);
 }
 
-/* =========================
-   Form Styles
-   =========================
-   Styles for forms, fields, labels, inputs, buttons, and type modifiers.
-*/
+/* Form Styles */
 .form {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   border: 2px solid #e9e3e1;
@@ -469,11 +426,7 @@ textarea.form__input {
   justify-content: space-between;
 }
 
-/* =========================
-   Upload Section Styles
-   =========================
-   Styles for CSV upload section and status message.
-*/
+/* Upload Section Styles */
 .upload-button-section {
   margin-top: 20px;
 }
