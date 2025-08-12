@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patients</title>
+  </head>
+  <body>
+    <!-- Header section: displays the app name and user info -->
+    <header class="header">
+      <h2>Vida Sana Software</h2>
+      <div class="header__user">
+        <h2>Admin</h2>
+        <img
+          class="header__logout-icon"
+          src="../assets/icons/logout-2-svgrepo-com.svg"
+          alt="Logout icon"
+        />
+      </div>
+    </header>
+
+    <!-- Sidebar navigation: contains profile, navigation links, and footer info -->
+    <aside class="aside">
+      <!-- Profile Section -->
+      <div class="asideProfile">
+        <img
+          class="asideProfile__icon"
+          src="../assets/icons/adhesive-plaster-svgrepo-com.svg"
+          alt="Vida Sana icon"
+        />
+        <h2 class="asideProfile__name">Vida Sana</h2>
+      </div>
+
+      <!-- Navigation links to other pages -->
+      <nav class="asideNav">
+        <ul class="asideNav__list">
+          <!-- Home page link -->
+          <li class="asideNav__item">
+            <a href="../../index.html" class="asideNav__link">
+              <img
+                class="asideNav__icon"
+                src="../assets/icons/widget-5-svgrepo-com.svg"
+                alt="Home icon"
+              />
+              <span class="asideNav__text">Home</span>
+            </a>
+          </li>
+          <!-- Medics page link -->
+          <li class="asideNav__item">
+            <a href="./medics.html" class="asideNav__link">
+              <img
+                class="asideNav__icon"
+                src="../assets/icons/user-plus-svgrepo-com.svg"
+                alt="Medic icon"
+              />
+              <span class="asideNav__text">Medics</span>
+            </a>
+          </li>
+          <!-- Patients page link (current) -->
+          <li class="asideNav__item">
+            <a href="./patients.html" class="asideNav__link">
+              <img
+                class="asideNav__icon"
+                src="../assets/icons/users-group-rounded-svgrepo-com.svg"
+                alt="Patients icon"
+              />
+              <span class="asideNav__text">Patients</span>
+            </a>
+          </li>
+          <!-- Appointments page link -->
+          <li class="asideNav__item">
+            <a href="./appointments.html" class="asideNav__link">
+              <img
+                class="asideNav__icon"
+                src="../assets/icons/calendar-minimalistic-svgrepo-com.svg"
+                alt="Appointments icon"
+              />
+              <span class="asideNav__text">Appointments</span>
+            </a>
+          </li>
+
+          <!-- Diagnoses page link -->
+          <li class="asideNav__item">
+            <a href="./diagnoses.html" class="asideNav__link">
+              <img
+                class="asideNav__icon"
+                src="../assets/icons/clipboard-svgrepo-com.svg"
+                alt="Diagnosis icon"
+              />
+              <span class="asideNav__text">Diagnosis</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Footer: additional info -->
+      <footer class="asideFooter">
+        <img
+          class="asideFooter__icon"
+          src="../assets/icons/adhesive-plaster-svgrepo-com.svg"
+          alt="Jermox icon"
+        />
+        <h2 class="asideFooter__title">Vida Sana</h2>
+        <p class="asideFooter__info">More info at: xxxxxxxxxxxxxx</p>
+      </footer>
+    </aside>
+
+    <!-- Main content: patient management -->
+    <main class="main">
+      <!-- Section header: icon and title -->
+      <div class="section__header">
+        <img
+          src="../assets/icons/users-group-rounded-svgrepo-com.svg"
+          alt="Patients list"
+          class="section__icon"
+        />
+        <h2 class="section__title">Patients</h2>
+      </div>
+
+      <!-- Introduction section: patient creation and CSV upload -->
+      <div class="section__introduction">
+        <!-- New Patient Form -->
+        <div class="form form--patient" id="new-patient-form">
+          <h3 class="form__title">New Patient</h3>
+          <!-- Form for creating a new patient -->
+          <form class="form__body">
+            <!-- Patient ID input -->
+            <div class="form__field">
+              <label class="form__label" for="patient-name">ID</label>
+              <input
+                class="form__input"
+                type="number"
+                id="patient-id"
+                name="patient_id"
+                required
+              />
+            </div>
+            <!-- Full Name input -->
+            <div class="form__field">
+              <label class="form__label" for="patient-name">Full Name</label>
+              <input
+                class="form__input"
+                type="text"
+                id="patient-name"
+                name="full_name"
+                required
+              />
+            </div>
+            <!-- Blood Type select -->
+            <div class="form__field">
+              <label class="form__label" for="patient-blood">Blood Type</label>
+              <select class="form__select" id="patient-blood" name="blood_type">
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+              </select>
+            </div>
+            <!-- Birth Date input -->
+            <div class="form__field">
+              <label class="form__label" for="patient-birth">Birth Date</label>
+              <input
+                class="form__input"
+                type="date"
+                id="patient-birth"
+                name="birth_date"
+                required
+              />
+            </div>
+            <!-- Gender select -->
+            <div class="form__field">
+              <label class="form__label" for="patient-gender">Gender</label>
+              <select class="form__select" id="patient-gender" name="gender">
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <!-- Phone input -->
+            <div class="form__field">
+              <label class="form__label" for="patient-phone">Phone</label>
+              <input
+                class="form__input"
+                type="tel"
+                id="patient-phone"
+                name="phone"
+                required
+              />
+            </div>
+            <!-- Email input -->
+            <div class="form__field">
+              <label class="form__label" for="patient-email">Email</label>
+              <input
+                class="form__input"
+                type="email"
+                id="patient-email"
+                name="email"
+                required
+              />
+            </div>
+            <!-- Address textarea -->
+            <div class="form__field">
+              <label class="form__label" for="patient-address">Address</label>
+              <textarea
+                class="form__input"
+                id="patient-address"
+                name="address"
+              ></textarea>
+            </div>
+            <!-- Submit button for creating patient -->
+            <button type="submit" class="form__button">Create</button>
+          </form>
+        </div>
+
+        <!-- CSV Upload Section: allows bulk import of patients -->
+        <div class="upload-button-section form">
+          <h3 class="form__title">Upload CSV File</h3>
+          <div class="form__body">
+            <div class="form__field">
+              <label for="csv-upload" class="form__label"
+                >Select CSV File:</label
+              >
+              <input
+                type="file"
+                id="csv-upload"
+                accept=".csv"
+                class="form__input"
+              />
+            </div>
+            <!-- Button to trigger CSV upload -->
+            <button id="upload-btn" class="form__button">Upload CSV</button>
+            <div id="upload-status"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Patient list section: search and display patients -->
+      <section class="section section--patients">
+        <div class="section__nav">
+          <!-- Search input for filtering patients -->
+          <input
+            type="search"
+            class="section__search"
+            id="patient-search-input"
+            placeholder="Search by ID, name, email, phone, blood type, gender..."
+          />
+          <!-- Search button -->
+          <button id="patient-search-btn" class="section__button">Search</button>
+        </div>
+      </section>
+    </main>
+    <!-- Main JS entry and patient logic -->
+    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/js/patient.js"></script>
+  </body>
+</html>

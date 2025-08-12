@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vida Sana Hospital</title>
+  </head>
+
+  <body>
+    <!-- =========================
+         Header Section
+         =========================
+         Displays the app name and user info.
+    -->
+    <header class="header">
+      <h2>Vida Sana Software</h2>
+      <div class="header__user">
+        <h2>Admin</h2>
+        <img
+          class="header__logout-icon"
+          src="./src/assets/icons/logout-2-svgrepo-com.svg"
+          alt="Logout icon"
+        />
+      </div>
+    </header>
+
+    <!-- =========================
+         Sidebar (Aside) Section
+         =========================
+         Contains profile, navigation links, and footer info.
+    -->
+    <aside class="aside">
+      <!-- Profile Section -->
+      <div class="asideProfile">
+        <img
+          class="asideProfile__icon"
+          src="./src/assets/icons/adhesive-plaster-svgrepo-com.svg"
+          alt="Vida Sana icon"
+        />
+        <h2 class="asideProfile__name">Vida Sana</h2>
+      </div>
+
+      <!-- Navigation links to other pages -->
+      <nav class="asideNav">
+        <ul class="asideNav__list">
+          <!-- Home page link -->
+          <li class="asideNav__item">
+            <a href="index.html" class="asideNav__link">
+              <img
+                class="asideNav__icon"
+                src="./src/assets/icons/widget-5-svgrepo-com.svg"
+                alt="Home icon"
+              />
+              <span class="asideNav__text">Home</span>
+            </a>
+          </li>
+          <!-- Medics page link -->
+          <li class="asideNav__item">
+            <a href="./src/pages/medics.html" class="asideNav__link">
+              <img
+                class="asideNav__icon"
+                src="./src/assets/icons/user-plus-svgrepo-com.svg"
+                alt="Medic icon"
+              />
+              <span class="asideNav__text">Medics</span>
+            </a>
+          </li>
+          <!-- Patients page link -->
+          <li class="asideNav__item">
+            <a href="./src/pages/patients.html" class="asideNav__link">
+              <img
+                class="asideNav__icon"
+                src="./src/assets/icons/users-group-rounded-svgrepo-com.svg"
+                alt="Patients icon"
+              />
+              <span class="asideNav__text">Patients</span>
+            </a>
+          </li>
+          <!-- Appointments page link -->
+          <li class="asideNav__item">
+            <a href="./src/pages/appointments.html" class="asideNav__link">
+              <img
+                class="asideNav__icon"
+                src="./src/assets/icons/calendar-minimalistic-svgrepo-com.svg"
+                alt="Appointments icon"
+              />
+              <span class="asideNav__text">Appointments</span>
+            </a>
+          </li>
+
+          <!-- Diagnoses page link -->
+          <li class="asideNav__item">
+            <a href="./src/pages/diagnoses.html" class="asideNav__link">
+              <img
+                class="asideNav__icon"
+                src="./src/assets/icons/clipboard-svgrepo-com.svg"
+                alt="Diagnosis icon"
+              />
+              <span class="asideNav__text">Diagnosis</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Footer: additional info -->
+      <footer class="asideFooter">
+        <img
+          class="asideFooter__icon"
+          src="./src/assets/icons/adhesive-plaster-svgrepo-com.svg"
+          alt="Jermox icon"
+        />
+        <h2 class="asideFooter__title">Vida Sana</h2>
+        <p class="asideFooter__info">More info at: xxxxxxxxxxxxxx</p>
+      </footer>
+    </aside>
+
+    <!-- =========================
+         Main Content Area
+         =========================
+         Displays the home page and instructions.
+    -->
+    <main class="main">
+      <h1>Home</h1>
+      <p>Please pick an option from the side menu.</p>
+    </main>
+    <!-- Main JS entry -->
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

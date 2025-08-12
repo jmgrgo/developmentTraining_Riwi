@@ -1,0 +1,486 @@
+@import url("https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap");
+
+/* =========================
+   Global Styles
+   =========================
+   Sets up box model, resets margin/padding, and applies font family.
+*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Funnel Display", sans-serif;
+}
+
+/* Ensure full height for html and body */
+html,
+body {
+  height: 100%;
+}
+
+/* Main grid layout: sidebar and main content */
+body {
+  display: grid;
+  grid-template-rows: 60px 1fr; /* Header and main */
+  grid-template-columns: 250px 1fr; /* Sidebar and main */
+}
+
+/* =========================
+   Header Styles
+   =========================
+   Styles for the top header bar, user info, and logout icon.
+*/
+.header {
+  grid-column: 2/3;
+  z-index: 10;
+  box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 35px;
+}
+
+.header__user {
+  display: flex;
+  gap: 30px;
+}
+
+.header__logout-icon {
+  width: auto;
+  height: 30px;
+  transition: all 0.1s ease;
+  cursor: pointer;
+}
+
+/* Highlight logout icon on hover and active */
+.header__logout-icon:hover {
+  box-shadow: 0 0 1px 7px cyan;
+  background-color: cyan;
+  border-radius: 7px;
+}
+
+.header__logout-icon:active {
+  box-shadow: 0 0 1px 7px rgb(146, 146, 146);
+  background-color: rgb(146, 146, 146);
+}
+
+/* =========================
+   Sidebar (Aside) Layout
+   =========================
+   Styles for the fixed sidebar, profile, navigation, and footer.
+*/
+.aside {
+  grid-row: 1/3;
+  grid-column: 1/2;
+  position: fixed;
+  z-index: 10;
+  width: 250px;
+  height: 100%;
+  box-shadow: 2px 0 5px -2px rgba(0, 0, 0, 0.5);
+  display: grid;
+  grid-template-rows: 120px auto 150px;
+}
+
+/* =========================
+   Aside Profile Section
+   =========================
+   Styles for the profile icon and name at the top of the sidebar.
+*/
+.asideProfile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  grid-row: 1/2;
+  border-bottom: 2px solid rgb(230, 230, 230);
+}
+
+.asideProfile__icon {
+  width: auto;
+  height: 60px;
+  padding: 10px;
+  background-color: cyan;
+  border-radius: 7px;
+}
+
+.asideProfile__name {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* =========================
+   Aside Navigation Section
+   =========================
+   Styles for navigation links and icons in the sidebar.
+*/
+.asideNav {
+  grid-row: 2/3;
+}
+
+.asideNav__list {
+  width: 100%;
+  padding: 25px 0;
+  list-style: none;
+}
+
+.asideNav__item {
+  width: 100%;
+}
+
+.asideNav__link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: 40px;
+  padding: 0 25px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.asideNav__link:hover {
+  background-color: rgb(235, 235, 235);
+}
+
+.asideNav__link:active {
+  background-color: rgb(146, 146, 146);
+}
+
+.asideNav__icon {
+  width: auto;
+  height: 25px;
+}
+
+.asideNav__text {
+  font-size: 1rem;
+}
+
+/* =========================
+   Aside Footer Section
+   =========================
+   Styles for the sidebar footer info and icon.
+*/
+.asideFooter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  grid-row: 3/4;
+  padding: 20px 0;
+  border-top: 2px solid rgb(230, 230, 230);
+  color: rgb(220, 220, 220);
+}
+
+.asideFooter__icon {
+  width: auto;
+  height: 50%;
+}
+
+.asideFooter__title {
+  margin: 0.25rem 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.asideFooter__info {
+  font-size: 0.9rem;
+}
+
+/* =========================
+   Main Content Area
+   =========================
+   Styles for the main content area next to the sidebar.
+*/
+.main {
+  grid-row: 2/3;
+  grid-column: 2/3;
+  padding: 20px 30px;
+  background-color: #fbfaf9;
+}
+
+
+/* =========================
+   Section Layout
+   =========================
+   Styles for main sections, headers, icons, search, and buttons.
+*/
+.section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 25px;
+}
+
+.section__header {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  grid-column: 1 / -1;
+}
+
+.section__icon {
+  width: auto;
+  height: 30px;
+}
+
+.section__title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.section__nav {
+  display: flex;
+  justify-content: space-between;
+  grid-column: 1 / -1;
+  gap: 25px;
+}
+
+.section__introduction{
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.section__search {
+  height: 60px;
+  font-size: 1.2rem;
+  width: 100%;
+  padding: 0 20px;
+  border: 2px solid #e9e3e1;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section__button {
+  width: auto;
+  padding: 15px;
+  border: 2px solid #e9e3e1;
+  border-radius: 14px;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.section__button:hover {
+  background-color: #ccc;
+}
+
+.section__button:active {
+  background-color: #888;
+  color: white;
+}
+
+
+/* =========================
+   Item Card Styles
+   =========================
+   Styles for cards representing medics, patients, diagnoses, appointments.
+*/
+.section__item {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border: 2px solid #e9e3e1;
+  border-radius: 14px;
+  padding: 20px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Color borders per type for visual distinction */
+.item--medic    { border-left: 5px solid purple; }
+.item--patient  { border-left: 5px solid blue; }
+.item--diagnosis{ border-left: 5px solid brown; }
+.item--appointment { border-left: 5px solid green; }
+
+.item__header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.item__info {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.item__labels,
+.item__values {
+  display: flex;
+  flex-direction: column;
+}
+
+.item__values {
+  align-items: flex-end;
+}
+
+.item__group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+/* =========================
+   Card Buttons
+   =========================
+   Styles for edit/remove buttons on cards.
+*/
+.item__buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.item__button {
+  padding: 10px;
+  background-color: rgb(230, 230, 230);
+  cursor: pointer;
+  border: 2px solid #e9e3e1;
+  border-radius: 7px;
+  font-size: 1rem;
+  width: 100%;
+  transition: background-color 0.1s ease;
+}
+
+.item__button:hover {
+  background-color: rgb(204, 204, 204);
+}
+
+.item__button:active {
+  background-color: rgb(110, 110, 110);
+}
+
+/* =========================
+   Form Styles
+   =========================
+   Styles for forms, fields, labels, inputs, buttons, and type modifiers.
+*/
+.form {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border: 2px solid #e9e3e1;
+  border-radius: 14px;
+  padding: 30px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin: 25px 0px;
+  width: 100%;
+}
+
+/* Form Title */
+.form__title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+
+/* Form Body */
+.form__body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Field container */
+.form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Label */
+.form__label {
+  font-size: 1rem;
+  color: #444;
+}
+
+/* Input + Textarea + Select */
+.form__input,
+.form__select {
+  height: 35px;
+  padding: 0 15px;
+  font-size: 1rem;
+  border-radius: 7px;
+  border: 2px solid #e9e3e1;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.form__input:focus,
+.form__select:focus,
+.form__textarea:focus {
+  outline: none;
+  border-color: #aaa;
+}
+
+/* Textarea styles */
+.form__input[type="textarea"],
+textarea.form__input {
+  height: 80px;
+  resize: vertical;
+  padding-top: 10px;
+}
+
+/* Submit Button */
+.form__button {
+  padding: 12px;
+  background-color: #e4e4e4;
+  border: 2px solid #e9e3e1;
+  border-radius: 7px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+  width: 200px;
+  align-self: center;
+}
+
+.form__button:hover {
+  background-color: #ccc;
+}
+
+.form__button:active {
+  background-color: #888;
+  color: white;
+}
+
+/* Type-specific border modifiers for forms */
+.form--medic {
+  border-left: 5px solid purple;
+}
+
+.form--patient {
+  border-left: 5px solid blue;
+}
+
+.form--diagnosis {
+  border-left: 5px solid brown;
+}
+
+.form--appointment {
+  border-left: 5px solid green;
+}
+
+.form__edit-buttons{
+  display: flex;
+  justify-content: space-between;
+}
+
+/* =========================
+   Upload Section Styles
+   =========================
+   Styles for CSV upload section and status message.
+*/
+.upload-button-section {
+  margin-top: 20px;
+}
+
+#upload-status {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #444;
+  margin-top: 10px;
+}

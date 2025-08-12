@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Appointments</title>
+  </head>
+  <body>
+    <!-- Header section: displays the app name and user info -->
+    <header class="header">
+      <h2>Vida Sana Software</h2>
+      <div class="header__user">
+        <h2>Admin</h2>
+        <img
+          class="header__logout-icon"
+          src="../assets/icons/logout-2-svgrepo-com.svg"
+          alt="Logout icon"
+        />
+      </div>
+    </header>
+
+    <!-- Sidebar navigation: contains profile, navigation links, and footer info -->
+    <aside class="aside">
+      <!-- Profile Section -->
+      <div class="asideProfile">
+        <img
+          class="asideProfile__icon"
+          src="../assets/icons/adhesive-plaster-svgrepo-com.svg"
+          alt="Vida Sana icon"
+        />
+        <h2 class="asideProfile__name">Vida Sana</h2>
+      </div>
+
+      <!-- Navigation links to other pages -->
+      <nav class="asideNav">
+        <ul class="asideNav__list">
+          <!-- Home page link -->
+          <li class="asideNav__item">
+            <a href="../../index.html" class="asideNav__link">
+              <img
+                class="asideNav__icon"
+                src="../assets/icons/widget-5-svgrepo-com.svg"
+                alt="Home icon"
+              />
+              <span class="asideNav__text">Home</span>
+            </a>
+          </li>
+          <!-- Medics page link -->
+          <li class="asideNav__item">
+            <a href="./medics.html" class="asideNav__link">
+              <img
+                class="asideNav__icon"
+                src="../assets/icons/user-plus-svgrepo-com.svg"
+                alt="Medic icon"
+              />
+              <span class="asideNav__text">Medics</span>
+            </a>
+          </li>
+          <!-- Patients page link -->
+          <li class="asideNav__item">
+            <a href="./patients.html" class="asideNav__link">
+              <img
+                class="asideNav__icon"
+                src="../assets/icons/users-group-rounded-svgrepo-com.svg"
+                alt="Patients icon"
+              />
+              <span class="asideNav__text">Patients</span>
+            </a>
+          </li>
+          <!-- Appointments page link (current) -->
+          <li class="asideNav__item">
+            <a href="./appointments.html" class="asideNav__link">
+              <img
+                class="asideNav__icon"
+                src="../assets/icons/calendar-minimalistic-svgrepo-com.svg"
+                alt="Appointments icon"
+              />
+              <span class="asideNav__text">Appointments</span>
+            </a>
+          </li>
+
+          <!-- Diagnoses page link -->
+          <li class="asideNav__item">
+            <a href="./diagnoses.html" class="asideNav__link">
+              <img
+                class="asideNav__icon"
+                src="../assets/icons/clipboard-svgrepo-com.svg"
+                alt="Diagnosis icon"
+              />
+              <span class="asideNav__text">Diagnosis</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Footer: additional info -->
+      <footer class="asideFooter">
+        <img
+          class="asideFooter__icon"
+          src="../assets/icons/adhesive-plaster-svgrepo-com.svg"
+          alt="Jermox icon"
+        />
+        <h2 class="asideFooter__title">Vida Sana</h2>
+        <p class="asideFooter__info">More info at: xxxxxxxxxxxxxx</p>
+      </footer>
+    </aside>
+
+    <!-- Main content: appointment management -->
+    <main class="main">
+      <!-- Section header: icon and title -->
+      <div class="section__header">
+        <img
+          src="../assets/icons/calendar-minimalistic-svgrepo-com.svg"
+          alt="Appointments list"
+          class="section__icon"
+        />
+        <h2 class="section__title">Appointments</h2>
+      </div>
+
+      <!-- Introduction section: appointment creation and CSV upload -->
+      <div class="section__introduction">
+        <!-- New Appointment Form -->
+        <div class="form form--appointment" id="new-appointment-form">
+          <h3 class="form__title">New Appointment</h3>
+          <!-- Form for creating a new appointment -->
+          <form class="form__body">
+            <!-- Appointment ID input -->
+            <div class="form__field">
+              <label class="form__label" for="appointment-id"
+                >Appointment ID</label
+              >
+              <input
+                class="form__input"
+                type="text"
+                id="appointment-id"
+                name="appointment_id"
+                required
+              />
+            </div>
+            <!-- Patient ID input -->
+            <div class="form__field">
+              <label class="form__label" for="patient-id">Patient ID</label>
+              <input
+                class="form__input"
+                type="text"
+                id="patient-id"
+                name="patient_id"
+                required
+              />
+            </div>
+            <!-- Medic ID input -->
+            <div class="form__field">
+              <label class="form__label" for="medic-id">Medic ID</label>
+              <input
+                class="form__input"
+                type="text"
+                id="medic-id"
+                name="medic_id"
+                required
+              />
+            </div>
+            <!-- Date input -->
+            <div class="form__field">
+              <label class="form__label" for="appointment-date">Date</label>
+              <input
+                class="form__input"
+                type="date"
+                id="appointment-date"
+                name="date"
+                required
+              />
+            </div>
+            <!-- Time input -->
+            <div class="form__field">
+              <label class="form__label" for="appointment-time">Time</label>
+              <input
+                class="form__input"
+                type="time"
+                id="appointment-time"
+                name="time"
+                required
+              />
+            </div>
+            <!-- Reason textarea -->
+            <div class="form__field">
+              <label class="form__label" for="appointment-reason">Reason</label>
+              <textarea
+                class="form__input"
+                id="appointment-reason"
+                name="reason"
+              ></textarea>
+            </div>
+            <!-- State select -->
+            <div class="form__field">
+              <label class="form__label" for="appointment-state">State</label>
+              <select class="form__select" id="appointment-state" name="state">
+                <option value="Pending">Pending</option>
+                <option value="Confirmed">Confirmed</option>
+                <option value="Canceled">Canceled</option>
+              </select>
+            </div>
+            <!-- Submit button for creating appointment -->
+            <button type="submit" class="form__button">Create</button>
+          </form>
+        </div>
+
+        <!-- CSV Upload Section: allows bulk import of appointments -->
+        <div class="upload-button-section form">
+          <h3 class="form__title">Upload CSV File</h3>
+          <div class="form__body">
+            <div class="form__field">
+              <label for="csv-upload" class="form__label"
+                >Select CSV File:</label
+              >
+              <input
+                type="file"
+                id="csv-upload"
+                accept=".csv"
+                class="form__input"
+              />
+            </div>
+            <!-- Button to trigger CSV upload -->
+            <button id="upload-btn" class="form__button">Upload CSV</button>
+            <div id="upload-status"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Appointment list section: search and display appointments -->
+      <section class="section section--appointments">
+        <div class="section__nav">
+          <!-- Search input for filtering appointments -->
+          <input
+            type="search"
+            class="section__search"
+            id="appointment-search-input"
+            placeholder="Search by ID, patient, medic, date, time, reason, state..."
+          />
+          <!-- Search button -->
+          <button id="appointment-search-btn" class="section__button">Search</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Main JS entry and appointment logic -->
+    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/js/appointment.js"></script>
+  </body>
+</html>
