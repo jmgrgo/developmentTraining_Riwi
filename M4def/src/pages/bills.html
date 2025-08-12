@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bills</title>
+  </head>
+  <body>
+    <!-- Header section: displays the app name and user info -->
+    <header class="header">
+      <h2>Vida Sana Software</h2>
+      <div class="header__user">
+        <h2>Admin</h2>
+        <img
+          class="header__logout-icon"
+          src="../assets/icons/logout-2-svgrepo-com.svg"
+          alt="Logout icon"
+        />
+      </div>
+    </header>
+
+    <!-- Sidebar navigation: contains profile, navigation links, and footer info -->
+    <aside class="aside">
+      <!-- Profile Section -->
+      <div class="asideProfile">
+        <img
+          class="asideProfile__icon"
+          src="../assets/icons/adhesive-plaster-svgrepo-com.svg"
+          alt="Vida Sana icon"
+        />
+        <h2 class="asideProfile__name">Vida Sana</h2>
+      </div>
+
+      <!-- Navigation links to other pages -->
+      <nav class="asideNav">
+        <ul class="asideNav__list">
+          <!-- Home page link -->
+          <li class="asideNav__item">
+            <a href="../../index.html" class="asideNav__link">
+              <img
+                class="asideNav__icon"
+                src="../assets/icons/widget-5-svgrepo-com.svg"
+                alt="Home icon"
+              />
+              <span class="asideNav__text">Home</span>
+            </a>
+          </li>
+          <!-- Clients page link -->
+          <li class="asideNav__item">
+            <a href="./clients.html" class="asideNav__link">
+              <img
+                class="asideNav__icon"
+                src="../assets/icons/user-plus-svgrepo-com.svg"
+                alt="Medic icon"
+              />
+              <span class="asideNav__text">Clients</span>
+            </a>
+          </li>
+          <!-- Bills page link (current) -->
+          <li class="asideNav__item">
+            <a href="./bills.html" class="asideNav__link">
+              <img
+                class="asideNav__icon"
+                src="../assets/icons/users-group-rounded-svgrepo-com.svg"
+                alt="Bills icon"
+              />
+              <span class="asideNav__text">Bills</span>
+            </a>
+          </li>
+          <!-- Transactions page link -->
+          <li class="asideNav__item">
+            <a href="./transactions.html" class="asideNav__link">
+              <img
+                class="asideNav__icon"
+                src="../assets/icons/calendar-minimalistic-svgrepo-com.svg"
+                alt="transactions icon"
+              />
+              <span class="asideNav__text">Transactions</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Footer: additional info -->
+      <footer class="asideFooter">
+        <img
+          class="asideFooter__icon"
+          src="../assets/icons/adhesive-plaster-svgrepo-com.svg"
+          alt="Jermox icon"
+        />
+        <h2 class="asideFooter__title">Vida Sana</h2>
+        <p class="asideFooter__info">More info at: xxxxxxxxxxxxxx</p>
+      </footer>
+    </aside>
+
+    <!-- Main content: bill management -->
+    <main class="main">
+      <!-- Section header: icon and title -->
+      <div class="section__header">
+        <img
+          src="../assets/icons/users-group-rounded-svgrepo-com.svg"
+          alt="Bills list"
+          class="section__icon"
+        />
+        <h2 class="section__title">Bills</h2>
+      </div>
+
+      <!-- Introduction section: bill creation and CSV upload -->
+      <div class="section__introduction">
+        <!-- New Bill Form -->
+        <div class="form form--bill" id="new-bill-form">
+          <h3 class="form__title">New Bill</h3>
+          <!-- Form for creating a new bill -->
+          <form class="form__body">
+            <!-- Bill ID input -->
+            <div class="form__field">
+              <label class="form__label" for="bill-number">Bill Number</label>
+              <input
+                class="form__input"
+                type="number"
+                id="bill-number"
+                name="bill_number"
+                required
+              />
+            </div>
+            <!-- Date input -->
+            <div class="form__field">
+              <label class="form__label" for="bill-period"
+                >Billing period</label
+              >
+              <input
+                class="form__input"
+                type="month"
+                id="bill-period"
+                name="billing_period"
+                required
+              />
+            </div>
+
+            <!-- Invoiced amount input -->
+            <div class="form__field">
+              <label class="form__label" for="bill-invoiced"
+                >Invoiced amount</label
+              >
+              <input
+                class="form__input"
+                type="number"
+                id="bill-invoiced"
+                name="invoiced_amount"
+                required
+              />
+            </div>
+            <!-- Paid amount input -->
+            <div class="form__field">
+              <label class="form__label" for="bill-paid">Paid amount</label>
+              <input
+                class="form__input"
+                type="number"
+                id="bill-paid"
+                name="paid_amount"
+                required
+              />
+            </div>
+            <!-- Submit button for creating bill -->
+            <button type="submit" class="form__button">Create</button>
+          </form>
+        </div>
+
+        <!-- CSV Upload Section: allows bulk import of bills -->
+        <div class="upload-button-section form">
+          <h3 class="form__title">Upload CSV File</h3>
+          <div class="form__body">
+            <div class="form__field">
+              <label for="csv-upload" class="form__label"
+                >Select CSV File:</label
+              >
+              <input
+                type="file"
+                id="csv-upload"
+                accept=".csv"
+                class="form__input"
+              />
+            </div>
+            <!-- Button to trigger CSV upload -->
+            <button id="upload-btn" class="form__button">Upload CSV</button>
+            <div id="upload-status"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bill list section: search and display bills -->
+      <section class="section section--bills">
+        <div class="section__nav">
+          <!-- Search input for filtering bills -->
+          <input
+            type="search"
+            class="section__search"
+            id="bill-search-input"
+            placeholder="Search by bill number, billing period..."
+          />
+          <!-- Search button -->
+          <button id="bill-search-btn" class="section__button">Search</button>
+        </div>
+      </section>
+    </main>
+    <!-- Main JS entry and bill logic -->
+    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/js/bill.js"></script>
+  </body>
+</html>
